@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FrancisStore.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : FrancisStoreController
     {
         public ActionResult Index()
         {
@@ -26,5 +26,51 @@ namespace FrancisStore.Web.Controllers
 
             return View();
         }
+
+        #region HomePagePartialView
+
+        [ChildActionOnly]
+        public ActionResult Slide()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Banner()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult OurProduct()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult BannerVideo()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Blog()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Instagram()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Shipping()
+        {
+            return PartialView();
+        }
+
+        #endregion
     }
 }

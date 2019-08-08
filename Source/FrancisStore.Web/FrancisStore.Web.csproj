@@ -122,6 +122,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FrancisStoreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +150,8 @@
     <Content Include="fonts\Font-Awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\Linearicons-Free-v1.0.0\fonts\Linearicons-Free.svg" />
     <Content Include="fonts\Linearicons-Free-v1.0.0\style.css" />
+    <Content Include="fonts\Montserrat\OFL.txt" />
+    <Content Include="fonts\Poppins\OFL.txt" />
     <Content Include="fonts\themify-icons\fonts\themify.svg" />
     <Content Include="fonts\themify-icons\themify-icons.css" />
     <Content Include="Global.asax" />
@@ -379,14 +382,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\countdowntime.js" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -397,6 +392,50 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-RegularItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-Black.ttf" />
+    <Content Include="fonts\Poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-Bold.ttf" />
+    <Content Include="fonts\Poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-Light.ttf" />
+    <Content Include="fonts\Poppins\Poppins-LightItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-Medium.ttf" />
+    <Content Include="fonts\Poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-Regular.ttf" />
+    <Content Include="fonts\Poppins\Poppins-RegularItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-SemiBold.ttf" />
+    <Content Include="fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="fonts\Poppins\Poppins-Thin.ttf" />
+    <Content Include="fonts\Poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -440,6 +479,17 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_FrancisStoreLayout.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\HeaderFixed.cshtml" />
+    <Content Include="Views\Shared\TopNotification.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Home\Slide.cshtml" />
+    <Content Include="Views\Home\Banner.cshtml" />
+    <Content Include="Views\Home\OurProduct.cshtml" />
+    <Content Include="Views\Home\BannerVideo.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Instagram.cshtml" />
+    <Content Include="Views\Home\Shipping.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -449,7 +499,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Home\Header.cshtml" />
+    <Content Include="Views\Shared\BackToTop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -459,10 +509,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -55,7 +55,7 @@ namespace FrancisStore.Web
                 "~/lib/animsition/js/animsition.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/popper.min.js",
+                "~/Scripts/umd/popper.min.js",
                 "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/select2").Include(

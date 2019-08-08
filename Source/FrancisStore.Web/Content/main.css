@@ -57,7 +57,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 @font-face {
   font-family: Montserrat-Italic;
-  src: url('../fonts/montserrat/Montserrat-Italic.ttf'); 
+  src: url('../fonts/montserrat/Montserrat-RegularItalic.ttf'); 
 }
 
 @font-face {
@@ -441,7 +441,7 @@ iframe {
 }
 
 .rs1-select2 .select2-container .select2-selection--single {
-  height: 20px;;
+  height: 20px;
 }
 
 /*[ rs2-select2 ]
@@ -1107,7 +1107,6 @@ li.sale-noti > a {
 
 .side-menu .sub-menu > li {
   padding-left: 12px;
-  padding-top: 
 }
 
 .side-menu .sub-menu a:hover {
