@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "animate.css@3.5.2",
+      "destination": "lib/animate.css/"
+    },
+    {
+      "library": "hamburgers@1.1.3",
+      "destination": "lib/hamburgers/"
+    },
+    {
+      "library": "animsition@4.0.2",
+      "destination": "lib/animsition/"
+    },
+    {
+      "library": "select2@4.0.8",
+      "destination": "lib/select2/"
+    },
+    {
+      "library": "bootstrap-daterangepicker@3.0.5",
+      "destination": "lib/bootstrap-daterangepicker/"
+    },
+    {
+      "library": "slick-carousel@1.9.0",
+      "destination": "lib/slick-carousel/"
+    },
+    {
+      "library": "lightbox2@2.11.1",
+      "destination": "lib/lightbox2/"
+    },
+    {
+      "library": "sweetalert@2.1.2",
+      "destination": "lib/sweetalert/"
+    }
+  ,
+{
+  "library": "parallax@3.1.0",
+  "destination": "Scripts/parallax/",
+  "files": [
+    "parallax.min.js"
+  ]
+}
+]
+}

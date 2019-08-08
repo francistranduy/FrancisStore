@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -127,27 +129,302 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Global.asax" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\main.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\util.css" />
+    <Content Include="Content\util.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\elegant_font\fonts\ElegantIcons.svg" />
+    <Content Include="fonts\elegant_font\lte-ie7.js" />
+    <Content Include="fonts\elegant_font\style.css" />
+    <Content Include="fonts\Font-Awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="fonts\Font-Awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="fonts\Font-Awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\fonts\Linearicons-Free.svg" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\style.css" />
+    <Content Include="fonts\themify-icons\fonts\themify.svg" />
+    <Content Include="fonts\themify-icons\themify-icons.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\banner-01.jpg" />
+    <Content Include="Images\banner-02.jpg" />
+    <Content Include="Images\banner-03.jpg" />
+    <Content Include="Images\banner-04.jpg" />
+    <Content Include="Images\banner-05.jpg" />
+    <Content Include="Images\banner-06.jpg" />
+    <Content Include="Images\banner-07.jpg" />
+    <Content Include="Images\banner-08.jpg" />
+    <Content Include="Images\banner-09.jpg" />
+    <Content Include="Images\banner-10.jpg" />
+    <Content Include="Images\banner-11.jpg" />
+    <Content Include="Images\banner-12.jpg" />
+    <Content Include="Images\banner-13.jpg" />
+    <Content Include="Images\banner-14.jpg" />
+    <Content Include="Images\bg-banner-01.jpg" />
+    <Content Include="Images\bg-banner-02.jpg" />
+    <Content Include="Images\bg-video-01.jpg" />
+    <Content Include="Images\blog-01.jpg" />
+    <Content Include="Images\blog-02.jpg" />
+    <Content Include="Images\blog-03.jpg" />
+    <Content Include="Images\blog-04.jpg" />
+    <Content Include="Images\blog-05.jpg" />
+    <Content Include="Images\blog-06.jpg" />
+    <Content Include="Images\blog-07.jpg" />
+    <Content Include="Images\blog-08.jpg" />
+    <Content Include="Images\blog-09.jpg" />
+    <Content Include="Images\blog-10.jpg" />
+    <Content Include="Images\gallery-01.jpg" />
+    <Content Include="Images\gallery-02.jpg" />
+    <Content Include="Images\gallery-03.jpg" />
+    <Content Include="Images\gallery-04.jpg" />
+    <Content Include="Images\gallery-05.jpg" />
+    <Content Include="Images\gallery-06.jpg" />
+    <Content Include="Images\gallery-07.jpg" />
+    <Content Include="Images\gallery-08.jpg" />
+    <Content Include="Images\gallery-09.jpg" />
+    <Content Include="Images\gallery-10.jpg" />
+    <Content Include="Images\gallery-11.jpg" />
+    <Content Include="Images\gallery-12.jpg" />
+    <Content Include="Images\gallery-13.jpg" />
+    <Content Include="Images\gallery-14.jpg" />
+    <Content Include="Images\gallery-15.jpg" />
+    <Content Include="Images\heading-pages-01.jpg" />
+    <Content Include="Images\heading-pages-02.jpg" />
+    <Content Include="Images\heading-pages-03.jpg" />
+    <Content Include="Images\heading-pages-04.jpg" />
+    <Content Include="Images\heading-pages-05.jpg" />
+    <Content Include="Images\heading-pages-06.jpg" />
+    <Content Include="Images\icons\bg-01.jpg" />
+    <Content Include="Images\icons\discover.png" />
+    <Content Include="Images\icons\express.png" />
+    <Content Include="Images\icons\favicon.png" />
+    <Content Include="Images\icons\icon-header-01.png" />
+    <Content Include="Images\icons\icon-header-02.png" />
+    <Content Include="Images\icons\icon-position-map.png" />
+    <Content Include="Images\icons\logo.png" />
+    <Content Include="Images\icons\mastercard.png" />
+    <Content Include="Images\icons\paypal.png" />
+    <Content Include="Images\icons\video-16-9.jpg" />
+    <Content Include="Images\icons\visa.png" />
+    <Content Include="Images\item-01.jpg" />
+    <Content Include="Images\item-02.jpg" />
+    <Content Include="Images\item-03.jpg" />
+    <Content Include="Images\item-04.jpg" />
+    <Content Include="Images\item-05.jpg" />
+    <Content Include="Images\item-06.jpg" />
+    <Content Include="Images\item-07.jpg" />
+    <Content Include="Images\item-08.jpg" />
+    <Content Include="Images\item-09.jpg" />
+    <Content Include="Images\item-10.jpg" />
+    <Content Include="Images\item-11.jpg" />
+    <Content Include="Images\item-12.jpg" />
+    <Content Include="Images\item-13.jpg" />
+    <Content Include="Images\item-14.jpg" />
+    <Content Include="Images\item-15.jpg" />
+    <Content Include="Images\item-16.jpg" />
+    <Content Include="Images\item-17.jpg" />
+    <Content Include="Images\item-cart-01.jpg" />
+    <Content Include="Images\item-cart-02.jpg" />
+    <Content Include="Images\item-cart-03.jpg" />
+    <Content Include="Images\item-cart-04.jpg" />
+    <Content Include="Images\item-cart-05.jpg" />
+    <Content Include="Images\item-cart-06.jpg" />
+    <Content Include="Images\master-slide-01.jpg" />
+    <Content Include="Images\master-slide-02.jpg" />
+    <Content Include="Images\master-slide-03.jpg" />
+    <Content Include="Images\master-slide-04.jpg" />
+    <Content Include="Images\master-slide-05.jpg" />
+    <Content Include="Images\master-slide-06.jpg" />
+    <Content Include="Images\master-slide-07.jpg" />
+    <Content Include="Images\master-slide-08.jpg" />
+    <Content Include="Images\product-detail-01.jpg" />
+    <Content Include="Images\product-detail-02.jpg" />
+    <Content Include="Images\product-detail-03.jpg" />
+    <Content Include="Images\shop-item-09.jpg" />
+    <Content Include="Images\thumb-item-01.jpg" />
+    <Content Include="Images\thumb-item-02.jpg" />
+    <Content Include="Images\thumb-item-03.jpg" />
+    <Content Include="Images\Untitled-5.jpg.jpg" />
+    <Content Include="lib\animate.css\animate.css" />
+    <Content Include="lib\animate.css\animate.min.css" />
+    <Content Include="lib\animsition\css\animsition.css" />
+    <Content Include="lib\animsition\css\animsition.min.css" />
+    <Content Include="lib\animsition\js\animsition.js" />
+    <Content Include="lib\animsition\js\animsition.min.js" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.min.css" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.min.js" />
+    <Content Include="lib\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="lib\hamburgers\hamburgers.css" />
+    <Content Include="lib\hamburgers\hamburgers.min.css" />
+    <Content Include="lib\lightbox2\css\lightbox.css" />
+    <Content Include="lib\lightbox2\css\lightbox.min.css" />
+    <Content Include="lib\lightbox2\images\close.png" />
+    <Content Include="lib\lightbox2\images\loading.gif" />
+    <Content Include="lib\lightbox2\images\next.png" />
+    <Content Include="lib\lightbox2\images\prev.png" />
+    <Content Include="lib\lightbox2\js\lightbox-plus-jquery.js" />
+    <Content Include="lib\lightbox2\js\lightbox-plus-jquery.min.js" />
+    <Content Include="lib\lightbox2\js\lightbox.js" />
+    <Content Include="lib\lightbox2\js\lightbox.min.js" />
+    <Content Include="lib\select2\css\select2.css" />
+    <Content Include="lib\select2\css\select2.min.css" />
+    <Content Include="lib\select2\js\i18n\af.js" />
+    <Content Include="lib\select2\js\i18n\ar.js" />
+    <Content Include="lib\select2\js\i18n\az.js" />
+    <Content Include="lib\select2\js\i18n\bg.js" />
+    <Content Include="lib\select2\js\i18n\bn.js" />
+    <Content Include="lib\select2\js\i18n\bs.js" />
+    <Content Include="lib\select2\js\i18n\ca.js" />
+    <Content Include="lib\select2\js\i18n\cs.js" />
+    <Content Include="lib\select2\js\i18n\da.js" />
+    <Content Include="lib\select2\js\i18n\de.js" />
+    <Content Include="lib\select2\js\i18n\dsb.js" />
+    <Content Include="lib\select2\js\i18n\el.js" />
+    <Content Include="lib\select2\js\i18n\en.js" />
+    <Content Include="lib\select2\js\i18n\es.js" />
+    <Content Include="lib\select2\js\i18n\et.js" />
+    <Content Include="lib\select2\js\i18n\eu.js" />
+    <Content Include="lib\select2\js\i18n\fa.js" />
+    <Content Include="lib\select2\js\i18n\fi.js" />
+    <Content Include="lib\select2\js\i18n\fr.js" />
+    <Content Include="lib\select2\js\i18n\gl.js" />
+    <Content Include="lib\select2\js\i18n\he.js" />
+    <Content Include="lib\select2\js\i18n\hi.js" />
+    <Content Include="lib\select2\js\i18n\hr.js" />
+    <Content Include="lib\select2\js\i18n\hsb.js" />
+    <Content Include="lib\select2\js\i18n\hu.js" />
+    <Content Include="lib\select2\js\i18n\hy.js" />
+    <Content Include="lib\select2\js\i18n\id.js" />
+    <Content Include="lib\select2\js\i18n\is.js" />
+    <Content Include="lib\select2\js\i18n\it.js" />
+    <Content Include="lib\select2\js\i18n\ja.js" />
+    <Content Include="lib\select2\js\i18n\ka.js" />
+    <Content Include="lib\select2\js\i18n\km.js" />
+    <Content Include="lib\select2\js\i18n\ko.js" />
+    <Content Include="lib\select2\js\i18n\lt.js" />
+    <Content Include="lib\select2\js\i18n\lv.js" />
+    <Content Include="lib\select2\js\i18n\mk.js" />
+    <Content Include="lib\select2\js\i18n\ms.js" />
+    <Content Include="lib\select2\js\i18n\nb.js" />
+    <Content Include="lib\select2\js\i18n\ne.js" />
+    <Content Include="lib\select2\js\i18n\nl.js" />
+    <Content Include="lib\select2\js\i18n\pl.js" />
+    <Content Include="lib\select2\js\i18n\ps.js" />
+    <Content Include="lib\select2\js\i18n\pt-BR.js" />
+    <Content Include="lib\select2\js\i18n\pt.js" />
+    <Content Include="lib\select2\js\i18n\ro.js" />
+    <Content Include="lib\select2\js\i18n\ru.js" />
+    <Content Include="lib\select2\js\i18n\sk.js" />
+    <Content Include="lib\select2\js\i18n\sl.js" />
+    <Content Include="lib\select2\js\i18n\sq.js" />
+    <Content Include="lib\select2\js\i18n\sr-Cyrl.js" />
+    <Content Include="lib\select2\js\i18n\sr.js" />
+    <Content Include="lib\select2\js\i18n\sv.js" />
+    <Content Include="lib\select2\js\i18n\th.js" />
+    <Content Include="lib\select2\js\i18n\tk.js" />
+    <Content Include="lib\select2\js\i18n\tr.js" />
+    <Content Include="lib\select2\js\i18n\uk.js" />
+    <Content Include="lib\select2\js\i18n\vi.js" />
+    <Content Include="lib\select2\js\i18n\zh-CN.js" />
+    <Content Include="lib\select2\js\i18n\zh-TW.js" />
+    <Content Include="lib\select2\js\select2.full.js" />
+    <Content Include="lib\select2\js\select2.full.min.js" />
+    <Content Include="lib\select2\js\select2.js" />
+    <Content Include="lib\select2\js\select2.min.js" />
+    <Content Include="lib\slick-carousel\ajax-loader.gif" />
+    <Content Include="lib\slick-carousel\fonts\slick.svg" />
+    <Content Include="lib\slick-carousel\slick-theme.css" />
+    <Content Include="lib\slick-carousel\slick-theme.min.css" />
+    <Content Include="lib\slick-carousel\slick.css" />
+    <Content Include="lib\slick-carousel\slick.js" />
+    <Content Include="lib\slick-carousel\slick.min.css" />
+    <Content Include="lib\slick-carousel\slick.min.js" />
+    <Content Include="libman.json" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.min.css.map" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.min.js.map" />
+    <Content Include="lib\slick-carousel\fonts\slick.eot" />
+    <Content Include="lib\slick-carousel\fonts\slick.ttf" />
+    <Content Include="lib\slick-carousel\fonts\slick.woff" />
+    <Content Include="lib\slick-carousel\slick-theme.min.css.map" />
+    <Content Include="lib\slick-carousel\slick.min.css.map" />
+    <Content Include="lib\lightbox2\js\lightbox-plus-jquery.min.map" />
+    <Content Include="lib\lightbox2\js\lightbox.min.map" />
+    <Content Include="fonts\elegant_font\fonts\ElegantIcons.eot" />
+    <Content Include="fonts\elegant_font\fonts\ElegantIcons.ttf" />
+    <Content Include="fonts\elegant_font\fonts\ElegantIcons.woff" />
+    <Content Include="fonts\themify-icons\fonts\themify.eot" />
+    <Content Include="fonts\themify-icons\fonts\themify.ttf" />
+    <Content Include="fonts\themify-icons\fonts\themify.woff" />
+    <Content Include="fonts\Font-Awesome-4.7.0\css\font-awesome.css.map" />
+    <Content Include="fonts\Font-Awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\Font-Awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\Font-Awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\Font-Awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\Font-Awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\fonts\Linearicons-Free.eot" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\fonts\Linearicons-Free.ttf" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\fonts\Linearicons-Free.woff" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\fonts\Linearicons-Free.woff2" />
+    <Content Include="lib\sweetalert\sweetalert.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\countdowntime.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\main.min.js" />
+    <Content Include="Scripts\map-custom.js" />
+    <Content Include="Scripts\map-custom.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\parallax100.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\slick-custom.js" />
+    <Content Include="Scripts\slick-custom.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -162,29 +439,37 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_FrancisStoreLayout.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
