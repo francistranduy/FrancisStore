@@ -12,25 +12,25 @@ namespace FrancisStore.Web.Controllers
         [ChildActionOnly]
         public ActionResult HeaderFixed()
         {
-            return PartialView();
+            return PartialView("_HeaderFixed");
         }
 
         [ChildActionOnly]
         public ActionResult TopNotification()
         {
-            return PartialView();
+            return PartialView("_TopNotification");
         }
 
         [ChildActionOnly]
         public ActionResult Header()
         {
-            return PartialView();
+            return PartialView("_Header");
         }
 
         [ChildActionOnly]
         public ActionResult Footer()
         {
-            return PartialView();
+            return PartialView("_Footer");
         }
         #endregion
     }

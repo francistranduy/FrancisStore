@@ -479,17 +479,17 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_FrancisStoreLayout.cshtml" />
-    <Content Include="Views\Shared\Header.cshtml" />
-    <Content Include="Views\Shared\HeaderFixed.cshtml" />
-    <Content Include="Views\Shared\TopNotification.cshtml" />
-    <Content Include="Views\Shared\Footer.cshtml" />
-    <Content Include="Views\Home\Slide.cshtml" />
-    <Content Include="Views\Home\Banner.cshtml" />
-    <Content Include="Views\Home\OurProduct.cshtml" />
-    <Content Include="Views\Home\BannerVideo.cshtml" />
-    <Content Include="Views\Home\Blog.cshtml" />
-    <Content Include="Views\Home\Instagram.cshtml" />
-    <Content Include="Views\Home\Shipping.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_HeaderFixed.cshtml" />
+    <Content Include="Views\Shared\_TopNotification.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\_Slide.cshtml" />
+    <Content Include="Views\Home\_Banner.cshtml" />
+    <Content Include="Views\Home\_OurProduct.cshtml" />
+    <Content Include="Views\Home\_BannerVideo.cshtml" />
+    <Content Include="Views\Home\_Blog.cshtml" />
+    <Content Include="Views\Home\_Instagram.cshtml" />
+    <Content Include="Views\Home\_Shipping.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -499,7 +499,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Shared\BackToTop.cshtml" />
+    <Content Include="Views\Shared\_BackToTop.cshtml" />
+    <Content Include="Views\Shared\_ModalVideo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

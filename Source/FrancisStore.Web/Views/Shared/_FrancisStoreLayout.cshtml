@@ -1,5 +1,4 @@
-﻿@using FrancisStore.Web.Controllers
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@ViewBag.Title</title>
@@ -35,7 +34,7 @@
     @{Html.RenderAction(nameof(FrancisStoreController.Footer), ViewContext.RouteData.Values["controller"]);}
 
     <!-- Back to top -->
-    @{Html.RenderPartial("BackToTop");}
+    @{Html.RenderPartial("_BackToTop");}
 
     <!-- Container Selection -->
     @RenderSection("DropdownSelection", false)
