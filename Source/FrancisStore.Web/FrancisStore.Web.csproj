@@ -475,8 +475,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_FrancisStoreLayout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
@@ -501,6 +499,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_BackToTop.cshtml" />
     <Content Include="Views\Shared\_ModalVideo.cshtml" />
+    <Content Include="Views\Shared\_CurrencySelection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,27 +23,20 @@
 <!-- Shipping -->
 @{Html.RenderAction(nameof(HomeController.Shipping), ViewContext.RouteData.Values["controller"]);}
 
-@section DropdownSelection
-    {
-    <div id="languegeSelection"></div>
-}
-
-@section ModalVideo
+@section BottomModal
     {
     @{Html.RenderPartial("_ModalVideo");}
 }
 
 @section Scripts
     {
+    @Scripts.Render("~/bundles/slick-carousel")
+    @Scripts.Render("~/bundles/lightbox2")
+    @Scripts.Render("~/bundles/sweetalert")
+
     <script type="text/javascript">
         //Parallax for Banner Video
         $('.parallax100').parallax100();
-
-        //Dropdown for Language Selection
-        $(".selection-1").select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $('#languegeSelection')
-        });
 
         //Add to cart modal
         $('.block2-btn-addcart').each(function () {
@@ -53,7 +46,7 @@
             });
         });
 
-        //Add to cart modal
+        //Add to wishlist modal
         $('.block2-btn-addwishlist').each(function () {
             var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
             $(this).on('click', function () {

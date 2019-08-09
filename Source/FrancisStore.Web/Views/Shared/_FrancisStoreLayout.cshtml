@@ -19,28 +19,22 @@
 
 <body class="animsition">
 
-    <!-- header fixed -->
+    <!-- Header fixed -->
     @{Html.RenderAction(nameof(FrancisStoreController.HeaderFixed), ViewContext.RouteData.Values["controller"]);}
-
-    <!-- top noti -->
+    <!-- Top Notification -->
     @{Html.RenderAction(nameof(FrancisStoreController.TopNotification), ViewContext.RouteData.Values["controller"]);}
-
     <!-- Header -->
     @{Html.RenderAction(nameof(FrancisStoreController.Header), ViewContext.RouteData.Values["controller"]);}
-
     @RenderBody()
-
     <!-- Footer -->
     @{Html.RenderAction(nameof(FrancisStoreController.Footer), ViewContext.RouteData.Values["controller"]);}
-
     <!-- Back to top -->
     @{Html.RenderPartial("_BackToTop");}
-
     <!-- Container Selection -->
+    @{Html.RenderPartial("_CurrencySelection");}
     @RenderSection("DropdownSelection", false)
-
-    <!-- Modal Video-->
-    @RenderSection("ModalVideo", false)
+    <!-- Bottom Modal-->
+    @RenderSection("BottomModal", false)
 
     <!--===============================================================================================-->
     @Scripts.Render("~/bundles/jquery")
@@ -51,15 +45,16 @@
     <!--===============================================================================================-->
     @Scripts.Render("~/bundles/select2")
     <!--===============================================================================================-->
-    @Scripts.Render("~/bundles/slick-carousel")
-    <!--===============================================================================================-->
-    @Scripts.Render("~/bundles/lightbox2")
-    <!--===============================================================================================-->
-    @Scripts.Render("~/bundles/sweetalert")
+    <!-- Languege selection -->
+    <script>
+        $(".selection-1").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#CurrencySelection')
+        });
+    </script>
+    @RenderSection("Scripts", false)
     <!--===============================================================================================-->
     @Scripts.Render("~/bundles/FrancisStore")
-    <!--===============================================================================================-->
-    @RenderSection("Scripts", false)
 
 </body>
 </html>
