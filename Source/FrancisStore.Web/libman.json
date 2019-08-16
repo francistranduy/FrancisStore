@@ -33,14 +33,17 @@
     {
       "library": "sweetalert@2.1.2",
       "destination": "lib/sweetalert/"
+    },
+    {
+      "library": "parallax@3.1.0",
+      "destination": "Scripts/parallax/",
+      "files": [
+        "parallax.min.js"
+      ]
+    },
+    {
+      "library": "noUiSlider@14.0.2",
+      "destination": "lib/noUiSlider/"
     }
-  ,
-{
-  "library": "parallax@3.1.0",
-  "destination": "Scripts/parallax/",
-  "files": [
-    "parallax.min.js"
   ]
-}
-]
 }

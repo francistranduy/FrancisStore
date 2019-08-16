@@ -124,6 +124,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FrancisStoreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,6 +278,10 @@
     <Content Include="lib\lightbox2\js\lightbox-plus-jquery.min.js" />
     <Content Include="lib\lightbox2\js\lightbox.js" />
     <Content Include="lib\lightbox2\js\lightbox.min.js" />
+    <Content Include="lib\noUiSlider\nouislider.css" />
+    <Content Include="lib\noUiSlider\nouislider.js" />
+    <Content Include="lib\noUiSlider\nouislider.min.css" />
+    <Content Include="lib\noUiSlider\nouislider.min.js" />
     <Content Include="lib\select2\css\select2.css" />
     <Content Include="lib\select2\css\select2.min.css" />
     <Content Include="lib\select2\js\i18n\af.js" />
@@ -454,6 +459,7 @@
     <Content Include="Scripts\map-custom.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\parallax100.js" />
+    <Content Include="Scripts\parallax\parallax.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -500,6 +506,13 @@
     <Content Include="Views\Shared\_BackToTop.cshtml" />
     <Content Include="Views\Shared\_ModalVideo.cshtml" />
     <Content Include="Views\Shared\_CurrencySelection.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_TitlePage.cshtml" />
+    <Content Include="Views\Product\_Categories.cshtml" />
+    <Content Include="Views\Product\_Filters.cshtml" />
+    <Content Include="Views\Product\_Sorting.cshtml" />
+    <Content Include="Views\Product\_Products.cshtml" />
+    <Content Include="Views\Product\_Pagination.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
