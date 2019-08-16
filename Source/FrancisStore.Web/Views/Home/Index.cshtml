@@ -30,9 +30,12 @@
 
 @section Scripts
     {
-    @Scripts.Render("~/bundles/slick-carousel")
-    @Scripts.Render("~/bundles/lightbox2")
-    @Scripts.Render("~/bundles/sweetalert")
+    <script type="text/javascript" src="/lib/slick-carousel/slick.min.js"></script>
+    <script type="text/javascript" src="/lib/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="/lib/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/Scripts/slick-custom.js"></script>
+    <script type="text/javascript" src="/Scripts/countdowntime.js"></script>
+    <script type="text/javascript" src="/Scripts/parallax100.js"></script>
     <script type="text/javascript">
         //Parallax for Banner Video
         $('.parallax100').parallax100();
@@ -57,6 +60,6 @@
 
 @section Styles
 {
-    @Styles.Render("~/lib/bootstrap-daterangepicker")
-    @Styles.Render("~/lib/lightbox2")
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-daterangepicker/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/lightbox2/css/lightbox.min.css">
 }

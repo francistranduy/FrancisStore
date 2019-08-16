@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="Images/icons/favicon.png" />
+    <link rel="icon" type="image/png" href="/Images/icons/favicon.png" />
     <!--===============================================================================================-->
     @Styles.Render("~/Content/bootstrap")
     <!--===============================================================================================-->
-    @Styles.Render("~/fonts/css")
+    <link rel="stylesheet" type="text/css" href="/fonts/Font-Awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/style.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/elegant_font/style.css">
     <!--===============================================================================================-->
-    @Styles.Render("~/lib/animate.css")
-    @Styles.Render("~/lib/hamburgers")
-    @Styles.Render("~/lib/animsition")
-    @Styles.Render("~/lib/select2")
-    @Styles.Render("~/lib/slick-carousel")
+    <link rel="stylesheet" type="text/css" href="/lib/animate.css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/select2/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="/lib/slick-carousel/slick.min.css">
     <!--===============================================================================================-->
     @RenderSection("Styles", false)
     <!--===============================================================================================-->
-    @Styles.Render("~/Content/FrancisStore")
+    @Styles.Render("~/Content/css")
     <!--===============================================================================================-->
 </head>
 
@@ -41,15 +44,14 @@
     @RenderSection("DropdownSelection", false)
     <!-- Bottom Modal-->
     @RenderSection("BottomModal", false)
-
     <!--===============================================================================================-->
     @Scripts.Render("~/bundles/jquery")
     <!--===============================================================================================-->
-    @Scripts.Render("~/bundles/animsition")
+    <script type="text/javascript" src="/lib/animsition/js/animsition.min.js"></script>
     <!--===============================================================================================-->
     @Scripts.Render("~/bundles/bootstrap")
     <!--===============================================================================================-->
-    @Scripts.Render("~/bundles/select2")
+    <script type="text/javascript" src="/lib/select2/js/select2.min.js"></script>
     <!--===============================================================================================-->
     <script>
         //Language selection
@@ -59,9 +61,9 @@
         });
     </script>
     <!--===============================================================================================-->
-    @RenderSection("Scripts", false)
+    @Scripts.Render("~/bundles/javascript")
     <!--===============================================================================================-->
-    @Scripts.Render("~/bundles/FrancisStore")
+    @RenderSection("Scripts", false)
     <!--===============================================================================================-->
 
 </body>

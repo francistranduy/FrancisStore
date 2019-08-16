@@ -23,7 +23,7 @@
       "destination": "lib/bootstrap-daterangepicker/"
     },
     {
-      "library": "slick-carousel@1.9.0",
+      "library": "slick-carousel@1.8.0",
       "destination": "lib/slick-carousel/"
     },
     {
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "library": "noUiSlider@14.0.2",
+      "library": "noUiSlider@10.0.0",
       "destination": "lib/noUiSlider/"
     }
   ]

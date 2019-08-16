@@ -14,6 +14,11 @@ namespace FrancisStore.Web.Controllers
             return View();
         }
 
+        public ActionResult Details()
+        {
+            return View();
+        }
+
         #region ProductPartialView
         [ChildActionOnly]
         public ActionResult Categories()
@@ -34,15 +39,21 @@ namespace FrancisStore.Web.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult Products()
-        {
-            return PartialView("_Products");
-        }
-
-        [ChildActionOnly]
         public ActionResult Pagination()
         {
             return PartialView("_Pagination");
+        }
+
+        [ChildActionOnly]
+        public ActionResult BreadCrumb()
+        {
+            return PartialView("_BreadCrumb");
+        }
+
+        [ChildActionOnly]
+        public ActionResult RelateProduct()
+        {
+            return PartialView("_RelateProduct");
         }
         #endregion
     }
