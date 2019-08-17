@@ -120,6 +120,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FrancisStoreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -502,7 +505,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_BackToTop.cshtml" />
     <Content Include="Views\Shared\_ModalVideo.cshtml" />
-    <Content Include="Views\Shared\_CurrencySelection.cshtml" />
+    <Content Include="Views\Shared\_LanguageSelection.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\_TitlePage.cshtml" />
     <Content Include="Views\Product\_Categories.cshtml" />
@@ -512,6 +515,20 @@
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\_BreadCrumb.cshtml" />
     <Content Include="Views\Product\_RelateProduct.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\_TitlePage.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\_TitlePage.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\_TitlePage.cshtml" />
+    <Content Include="Views\Blog\Details.cshtml" />
+    <Content Include="Views\Blog\_BreadCrumb.cshtml" />
+    <Content Include="Views\Blog\_LeaveAComment.cshtml" />
+    <Content Include="Views\Blog\_Categories.cshtml" />
+    <Content Include="Views\Blog\_FeaturedProduct.cshtml" />
+    <Content Include="Views\Blog\_Archive.cshtml" />
+    <Content Include="Views\Blog\_Tags.cshtml" />
+    <Content Include="Views\Blog\_Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

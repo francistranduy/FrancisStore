@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="/Images/icons/favicon.png" />
+    <link rel="icon" type="image/png" href="~/Images/icons/favicon.png" />
     <!--===============================================================================================-->
     @Styles.Render("~/Content/bootstrap")
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/fonts/Font-Awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/fonts/themify-icons/themify-icons.css">
-    <link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/style.css">
-    <link rel="stylesheet" type="text/css" href="/fonts/elegant_font/style.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/Font-Awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/style.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/elegant_font/style.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/lib/animate.css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/lib/hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="/lib/animsition/css/animsition.min.css">
-    <link rel="stylesheet" type="text/css" href="/lib/select2/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/animate.css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/select2/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/slick-carousel/slick.min.css">
     <!--===============================================================================================-->
     @RenderSection("Styles", false)
@@ -40,24 +40,24 @@
     <!-- Back to top -->
     @{Html.RenderPartial("_BackToTop");}
     <!-- Container Selection -->
-    @{Html.RenderPartial("_CurrencySelection");}
+    @{Html.RenderPartial("_LanguageSelection");}
     @RenderSection("DropdownSelection", false)
     <!-- Bottom Modal-->
     @RenderSection("BottomModal", false)
     <!--===============================================================================================-->
     @Scripts.Render("~/bundles/jquery")
     <!--===============================================================================================-->
-    <script type="text/javascript" src="/lib/animsition/js/animsition.min.js"></script>
+    <script type="text/javascript" src="~/lib/animsition/js/animsition.min.js"></script>
     <!--===============================================================================================-->
     @Scripts.Render("~/bundles/bootstrap")
     <!--===============================================================================================-->
-    <script type="text/javascript" src="/lib/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="~/lib/select2/js/select2.min.js"></script>
     <!--===============================================================================================-->
     <script>
         //Language selection
         $(".selection-1").select2({
             minimumResultsForSearch: 20,
-            dropdownParent: $('#CurrencySelection')
+            dropdownParent: $('#LanguageSelection')
         });
     </script>
     <!--===============================================================================================-->
