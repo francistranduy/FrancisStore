@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FrancisStore.Web.Controllers
 {
-    public class BlogController : FrancisStoreController
+    public class BlogController : Controller
     {
         // GET: Blog
         public ActionResult Index()
