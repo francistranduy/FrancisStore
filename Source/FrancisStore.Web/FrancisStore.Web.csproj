@@ -480,9 +480,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_FrancisStoreLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_HeaderFixed.cshtml" />
     <Content Include="Views\Shared\_TopNotification.cshtml" />
@@ -529,6 +528,8 @@
     <Content Include="Views\Blog\_Archive.cshtml" />
     <Content Include="Views\Blog\_Tags.cshtml" />
     <Content Include="Views\Blog\_Search.cshtml" />
+    <Content Include="Views\Shared\_ContentLayout.cshtml" />
+    <Content Include="Views\Shared\_TitlePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

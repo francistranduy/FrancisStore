@@ -34,7 +34,19 @@
     @{Html.RenderAction(nameof(FrancisStoreController.TopNotification), ViewContext.RouteData.Values["controller"]);}
     <!-- Header -->
     @{Html.RenderAction(nameof(FrancisStoreController.Header), ViewContext.RouteData.Values["controller"]);}
-    @RenderBody()
+
+    <!-- Title Page -->
+    @{Html.RenderPartial("_TitlePage");}
+
+    <!-- content page -->
+    <section class="bgwhite p-t-66 p-b-38">
+        <div class="container">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     @{Html.RenderAction(nameof(FrancisStoreController.Footer), ViewContext.RouteData.Values["controller"]);}
     <!-- Back to top -->
