@@ -1,68 +1,64 @@
 ﻿@using FrancisStore.Identity.Models
 @model LoginViewModel
+
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
 }
 
-<section class="bgwhite p-t-66 p-b-38">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <section id="socialLoginForm">
-                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                </section>
+<div class="col-md-8">
+    <section id="socialLoginForm">
+        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+    </section>
+</div>
+<div class="col-md-4 p-b-30">
+    <section class="p-b-64" id="loginForm">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4 class="m-text26 t-center">
+                Login with your account
+            </h4>
+            <hr />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger s-text3 m-b-20" })
+            <div class="form-group m-b-20">
+                <div class="bo4 of-hidden size15">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.NameFor(m => m.Email) })
+                </div>
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger s-text23" })
             </div>
-            <div class="col-md-4 p-b-30">
-                <section class="p-b-64" id="loginForm">
-                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <h4 class="m-text26 t-center">
-                            Login with your account
-                        </h4>
-                        <hr />
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger s-text3 m-b-20" })
-                        <div class="form-group m-b-20">
-                            <div class="bo4 of-hidden size15">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.NameFor(m => m.Email) })
-                            </div>
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger s-text23" })
-                        </div>
-                        <div class="form-group m-b-20">
-                            <div class="bo4 of-hidden size15">
-                                @Html.PasswordFor(m => m.Password, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.NameFor(m => m.Password) })
-                            </div>
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger s-text23" })
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <div class="checkbox">
-                                    @Html.CheckBoxFor(m => m.RememberMe)
-                                    @Html.LabelFor(m => m.RememberMe, new { @class = "s-text20" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div>
-                                <input type="submit" value="Login" class="flex-c-m size2 bg11 bo-rad-20 hov1 s-text1 trans-0-4" />
-                            </div>
-                        </div>
-
-                        <p class="t-center">
-                            @Html.ActionLink("Forgot password?", "ForgotPassword", null, new { @class = "s-text20" })
-                        </p>
-                        <p class="t-center">
-                            Don't have an account?
-                            @Html.ActionLink("Create one!", "Register", null, new { @class = "s-text20" })
-                        </p>
-                    }
-                </section>
-
+            <div class="form-group m-b-20">
+                <div class="bo4 of-hidden size15">
+                    @Html.PasswordFor(m => m.Password, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.NameFor(m => m.Password) })
+                </div>
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger s-text23" })
             </div>
-        </div>
-    </div>
-</section>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe, new { @class = "s-text20" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Login" class="flex-c-m size2 bg11 bo-rad-20 hov1 s-text1 trans-0-4" />
+                </div>
+            </div>
+
+            <p class="t-center">
+                @Html.ActionLink("Forgot password?", "ForgotPassword", null, new { @class = "s-text20" })
+            </p>
+            <p class="t-center">
+                Don't have an account?
+                @Html.ActionLink("Create one!", "Register", null, new { @class = "s-text20" })
+            </p>
+        }
+    </section>
+
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

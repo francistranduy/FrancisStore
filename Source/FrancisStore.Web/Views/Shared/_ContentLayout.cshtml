@@ -35,7 +35,19 @@
     @{Html.RenderPartial("_TopNotification");}
     <!-- Header -->
     @{Html.RenderPartial("_Header", User.Identity as FrancisStoreUser);}
-    @RenderBody()
+
+    <!-- Title Page -->
+    @RenderSection("TitlePage", false)
+
+    <!-- content page -->
+    <section class="bgwhite p-t-66 p-b-38">
+        <div class="container">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     @{Html.RenderPartial("_Footer");}
     <!-- Back to top -->
