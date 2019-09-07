@@ -185,50 +185,10 @@
     <div class="wrap_header">
 
         <!-- Menu -->
-        <div class="wrap_menu">
-            <nav class="menu">
-                <ul class="main_menu">
-                    <li>
-                        <a href="index.html">Home</a>
-                        <ul class="sub_menu">
-                            <li><a href="index.html">Homepage V1</a></li>
-                            <li><a href="home-02.html">Homepage V2</a></li>
-                            <li><a href="home-03.html">Homepage V3</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="product.html">Shop</a>
-                    </li>
-
-                    <li class="sale-noti">
-                        <a href="product.html">Sale</a>
-                    </li>
-
-                    <li>
-                        <a href="cart.html">Features</a>
-                    </li>
-
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        @{Html.RenderPartial("_MainMenu");}
 
         <!-- Header Icon -->
-        <div class="header-icons">
-
-        </div>
-    </div>
+        <div class="header-icons"></div>
     </div>
 
     <!-- Header Mobile -->
@@ -444,37 +404,22 @@
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="index.html">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="index.html">Homepage V1</a></li>
-                        <li><a href="home-02.html">Homepage V2</a></li>
-                        <li><a href="home-03.html">Homepage V3</a></li>
-                    </ul>
-                    <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="item-menu-mobile">
+                    @Html.ActionLink("Product", "Index", "Product")
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Shop</a>
+                    @Html.ActionLink("Blog", "Index", "Blog")
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Sale</a>
+                    @Html.ActionLink("About", "Index", "About")
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="cart.html">Features</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="blog.html">Blog</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="about.html">About</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="contact.html">Contact</a>
+                    @Html.ActionLink("Contact", "Index", "Contact")
                 </li>
             </ul>
         </nav>

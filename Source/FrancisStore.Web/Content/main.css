@@ -698,7 +698,7 @@ iframe {
             border-bottom: 1px solid transparent;
         }
 
-li.sale-noti > a {
+li.active-item > a {
     color: #e65540;
 }
 

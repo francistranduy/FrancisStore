@@ -1,0 +1,25 @@
+﻿<div class="wrap_menu">
+    <nav class="menu">
+        <ul class="main_menu">
+            <li class="@(Html.IsActive("Home", "Index") ? "active-item" : "")">
+                @Html.ActionLink("Home", "Index", "Home")
+            </li>
+
+            <li class="@(Html.IsActive("Product", "Index") ? "active-item" : "")">
+                @Html.ActionLink("Product", "Index", "Product")
+            </li>
+
+            <li class="@(Html.IsActive("Blog", "Index") ? "active-item" : "")">
+                @Html.ActionLink("Blog", "Index", "Blog")
+            </li>
+
+            <li class="@(Html.IsActive("About", "Index") ? "active-item" : "")">
+                @Html.ActionLink("About", "Index", "About")
+            </li>
+
+            <li class="@(Html.IsActive("Contact", "Index") ? "active-item" : "")">
+                @Html.ActionLink("Contact", "Index", "Contact")
+            </li>
+        </ul>
+    </nav>
+</div>
