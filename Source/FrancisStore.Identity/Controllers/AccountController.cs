@@ -357,7 +357,7 @@ namespace FrancisStore.Identity.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction("Index", "Profile");
             }
 
             if (ModelState.IsValid)

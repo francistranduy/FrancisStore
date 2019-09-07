@@ -9,6 +9,9 @@ using FrancisStore.Identity.Models;
 using FrancisStore.Entity;
 using FrancisStore.Entity.Models;
 using FrancisStore.Identity;
+using Microsoft.Owin.Security.Facebook;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace FrancisStore.Web
 {
@@ -54,12 +57,50 @@ namespace FrancisStore.Web
             //    clientSecret: "");
 
             //app.UseTwitterAuthentication(
-            //   consumerKey: "",
+            //   consumerKey: "",   
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            var fbAuthOptions = new FacebookAuthenticationOptions()
+            {
+                AppId = "2369775049977123",
+                AppSecret = "430c56c74ef45985f38486084cf6fef4",
+            };
+
+            // Set requested scope
+            //fbAuthOptions.Scope.Add("email");
+            //fbAuthOptions.Scope.Add("default");
+
+            // Set requested fields
+            //fbAuthOptions.Fields.Add("email");
+            //fbAuthOptions.Fields.Add("first_name");
+            //fbAuthOptions.Fields.Add("middle_name");
+            //fbAuthOptions.Fields.Add("last_name");
+
+            fbAuthOptions.Provider = new FacebookAuthenticationProvider()
+            {
+                OnAuthenticated = (context) =>
+                {
+                    // Attach the access token if you need it later on for calls on behalf of the user
+                    context.Identity.AddClaim(new Claim("FacebookAccessToken", context.AccessToken));
+
+                    foreach (var claim in context.User)
+                    {
+                        //var claimType = string.Format("urn:facebook:{0}", claim.Key);
+                        var claimType = string.Format("{0}", claim.Key);
+                        string claimValue = claim.Value.ToString();
+
+                        if (!context.Identity.HasClaim(claimType, claimValue))
+                            context.Identity.AddClaim(new Claim(claimType, claimValue, "XmlSchemaString", "Facebook"));
+                    }
+
+                    return Task.FromResult(0);
+                }
+            };
+
+
+            app.UseFacebookAuthentication(fbAuthOptions);
+
+
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
