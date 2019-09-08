@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using FrancisStore.Identity.Models;
 using FrancisStore.Entity;
-using FrancisStore.Entity.Models;
+using FrancisStore.Entity.Identity;
 using FrancisStore.Identity;
 using Microsoft.Owin.Security.Facebook;
 using System.Security.Claims;

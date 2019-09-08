@@ -1,6 +1,6 @@
 namespace FrancisStore.Entity
 {
-    using FrancisStore.Entity.Models;
+    using FrancisStore.Entity.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;

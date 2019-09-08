@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FrancisStore.Identity.Models;
-using FrancisStore.Entity.Models;
+using FrancisStore.Entity.Identity;
 
 namespace FrancisStore.Identity.Controllers
 {
