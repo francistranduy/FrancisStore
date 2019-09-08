@@ -1,5 +1,6 @@
 namespace FrancisStore.Entity.Migrations
 {
+    using FrancisStore.Entity.Products;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -19,6 +20,14 @@ namespace FrancisStore.Entity.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            var products = Seeder.ReadFile<Product>();
+            if (products != null && products.Any())
+                context.Products.AddOrUpdate(products.ToArray());
+
+            var productImages = Seeder.ReadFile<ProductImage>();
+            if (productImages != null && productImages.Any())
+                context.ProductImages.AddOrUpdate(productImages.ToArray());
         }
     }
 }
