@@ -1,6 +1,7 @@
 namespace FrancisStore.Entity
 {
     using FrancisStore.Entity.Models;
+    using FrancisStore.Entity.Products;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
@@ -27,6 +28,15 @@ namespace FrancisStore.Entity
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
+
+        public virtual DbSet<Collect> Collects { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductCollection> ProductCollections { get; set; }
+        public virtual DbSet<ProductCollectionImage> ProductCollectionImages { get; set; }
+        public virtual DbSet<ProductImage> ProductImages { get; set; }
+        public virtual DbSet<ProductProperty> ProductProperties { get; set; }
+        public virtual DbSet<ProductVariant> ProductVariants { get; set; }
+        public virtual DbSet<ProductVariantOption> ProductVariantOptions { get; set; }
     }
 
     //public class MyEntity

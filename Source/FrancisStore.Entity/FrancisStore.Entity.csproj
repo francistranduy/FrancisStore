@@ -56,6 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201909080848485_AddProductEntities.cs" />
+    <Compile Include="Migrations\201909080848485_AddProductEntities.Designer.cs">
+      <DependentUpon>201909080848485_AddProductEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products\Collect.cs" />
     <Compile Include="Products\ProductCollection.cs" />
     <Compile Include="FrancisStoreDbContext.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908200440082_AddNameForFrancisStoreUser.resx">
       <DependentUpon>201908200440082_AddNameForFrancisStoreUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909080848485_AddProductEntities.resx">
+      <DependentUpon>201909080848485_AddProductEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
