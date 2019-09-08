@@ -3173,6 +3173,12 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 	text-decoration: underline;
 }
 
+.s-text23 {
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
 /*[ M-Text 16 - 30 ]
 ///////////////////////////////////////////////////////////
 */
@@ -3716,6 +3722,11 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 .bg6 {background-color: #f0f0f0;}
 .bg7 {background-color: #333333;}
 .bg8 {background-color: #e6e6e6;}
+.bg9 {background-color: #f96816}
+.bg10 {background-color: #2196F3}
+.bg11 {background-color: #00c292}
+.bg12 {background-color: #FF9800}
+.bg13 {background-color: #F44336}
 
 .bg-img1 {
 	background-repeat: no-repeat;

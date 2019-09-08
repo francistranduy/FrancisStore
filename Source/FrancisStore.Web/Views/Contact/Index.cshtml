@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Blog";
+    ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_ContentLayout.cshtml";
 }
 
@@ -38,6 +38,11 @@
         </div>
     </form>
 </div>
+
+@section TitlePage
+    {
+    @{Html.RenderPartial("_TitlePage");}
+}
 
 @section Scripts
 {

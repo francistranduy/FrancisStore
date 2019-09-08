@@ -428,6 +428,12 @@
     @{Html.RenderAction(nameof(ProductController.Pagination), ViewContext.RouteData.Values["controller"]);}
 </div>
 
+
+@section TitlePage
+    {
+    @{Html.RenderPartial("_TitlePage");}
+}
+
 @section DropdownSelection
 {
     <div id="FilterSelections"></div>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Web", "Francis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Entity", "FrancisStore.Entity\FrancisStore.Entity.csproj", "{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Identity", "FrancisStore.Identity\FrancisStore.Identity.csproj", "{94534C17-7340-4008-931E-E1B8B97214E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94534C17-7340-4008-931E-E1B8B97214E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94534C17-7340-4008-931E-E1B8B97214E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94534C17-7340-4008-931E-E1B8B97214E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94534C17-7340-4008-931E-E1B8B97214E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

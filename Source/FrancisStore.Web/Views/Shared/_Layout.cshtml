@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using FrancisStore.Entity.Models
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@ViewBag.Title</title>
@@ -29,14 +30,14 @@
 <body class="animsition">
 
     <!-- Header fixed -->
-    @{Html.RenderAction(nameof(FrancisStoreController.HeaderFixed), ViewContext.RouteData.Values["controller"]);}
+    @{Html.RenderPartial("_HeaderFixed");}
     <!-- Top Notification -->
-    @{Html.RenderAction(nameof(FrancisStoreController.TopNotification), ViewContext.RouteData.Values["controller"]);}
+    @{Html.RenderPartial("_TopNotification");}
     <!-- Header -->
-    @{Html.RenderAction(nameof(FrancisStoreController.Header), ViewContext.RouteData.Values["controller"]);}
+    @{Html.RenderPartial("_Header", User.Identity as FrancisStoreUser);}
     @RenderBody()
     <!-- Footer -->
-    @{Html.RenderAction(nameof(FrancisStoreController.Footer), ViewContext.RouteData.Values["controller"]);}
+    @{Html.RenderPartial("_Footer");}
     <!-- Back to top -->
     @{Html.RenderPartial("_BackToTop");}
     <!-- Container Selection -->

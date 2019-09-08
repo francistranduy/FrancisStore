@@ -1,4 +1,6 @@
-﻿<header class="header2">
+﻿@using Microsoft.AspNet.Identity
+@using FrancisStore.Identity
+<header class="header2">
     <!-- Header desktop -->
     <div class="container-menu-header-v2 p-t-26">
         <div class="topbar2">
@@ -27,14 +29,8 @@
                     </select>
                 </div>
 
-                <!--  -->
-                <a href="#" class="header-wrapicon1 dis-block m-l-30">
-                    <img src="~/Images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                </a>
-
-                <span class="linedivide1"></span>
-
-                <div class="header-wrapicon2 m-r-13">
+                <!-- Header cart  -->
+                <div class="header-wrapicon1 dis-block m-l-30">
                     <img src="~/Images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">0</span>
 
@@ -111,56 +107,88 @@
                         </div>
                     </div>
                 </div>
+
+                <span class="linedivide1"></span>
+
+                <!-- Header user  -->
+                <div href="#" class="header-wrapicon2 m-r-13">
+                    <img src="~/Images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+
+                    <!-- Header user info -->
+                    <div class="header-user header-dropdown">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="header-user-info p-b-32">
+                                <div class="header-user-info-img hov-img-zoom">
+                                    <img src="~/Images/user-header-01.jpg" alt="IMG">
+                                </div>
+
+                                <div class="header-user-info-txt">
+                                    <a href="#" class="header-user-info-name">
+                                        @User.Identity.GetUserFirstName() @User.Identity.GetUserLastName()
+                                    </a>
+
+                                    <span class="header-user-email">
+                                        @User.Identity.GetUserName()
+                                    </span>
+                                </div>
+                            </div>
+
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                            }
+
+                            <div class="header-user-buttons">
+                                <div class="header-user-wrapbtn">
+                                    <!-- Button -->
+                                    @Html.ActionLink("Profile", "Index", "Profile", routeValues: null, htmlAttributes: new { @class = "flex-c-m size1 bg10 bo-rad-20 hov1 s-text1 trans-0-4" })
+                                </div>
+
+                                <div class="header-user-wrapbtn">
+                                    <!-- Button -->
+                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="flex-c-m size1 bg12 bo-rad-20 hov1 s-text1 trans-0-4">
+                                        Logout
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="header-user-info p-b-32">
+                                <div class="header-user-noti">
+                                    <p class="m-text26 t-center">
+                                        You are not logged in!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="header-user-buttons">
+                                <div class="header-user-wrapbtn">
+                                    <!-- Button -->
+                                    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "flex-c-m size1 bg10 bo-rad-20 hov1 s-text1 trans-0-4" })
+                                </div>
+
+                                <div class="header-user-wrapbtn">
+                                    <!-- Button -->
+                                    @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "flex-c-m size1 bg11 bo-rad-20 hov1 s-text1 trans-0-4" })
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
+
         </div>
+    </div>
 
-        <div class="wrap_header">
+    <div class="wrap_header">
 
-            <!-- Menu -->
-            <div class="wrap_menu">
-                <nav class="menu">
-                    <ul class="main_menu">
-                        <li>
-                            <a href="index.html">Home</a>
-                            <ul class="sub_menu">
-                                <li><a href="index.html">Homepage V1</a></li>
-                                <li><a href="home-02.html">Homepage V2</a></li>
-                                <li><a href="home-03.html">Homepage V3</a></li>
-                            </ul>
-                        </li>
+        <!-- Menu -->
+        @{Html.RenderPartial("_MainMenu");}
 
-                        <li>
-                            <a href="product.html">Shop</a>
-                        </li>
-
-                        <li class="sale-noti">
-                            <a href="product.html">Sale</a>
-                        </li>
-
-                        <li>
-                            <a href="cart.html">Features</a>
-                        </li>
-
-                        <li>
-                            <a href="blog.html">Blog</a>
-                        </li>
-
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-            <!-- Header Icon -->
-            <div class="header-icons">
-
-            </div>
-        </div>
+        <!-- Header Icon -->
+        <div class="header-icons"></div>
     </div>
 
     <!-- Header Mobile -->
@@ -174,9 +202,82 @@
         <div class="btn-show-menu">
             <!-- Header Icon mobile -->
             <div class="header-icons-mobile">
-                <a href="#" class="header-wrapicon1 dis-block">
-                    <img src="~/Images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                </a>
+                <div href="#" class="header-wrapicon1 dis-block">
+                    <img src="~/Images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+
+                    <!-- Header cart noti -->
+                    <div class="header-cart header-dropdown">
+                        <ul class="header-cart-wrapitem">
+                            <li class="header-cart-item">
+                                <div class="header-cart-item-img">
+                                    <img src="~/Images/item-cart-01.jpg" alt="IMG">
+                                </div>
+
+                                <div class="header-cart-item-txt">
+                                    <a href="#" class="header-cart-item-name">
+                                        White Shirt With Pleat Detail Back
+                                    </a>
+
+                                    <span class="header-cart-item-info">
+                                        1 x $19.00
+                                    </span>
+                                </div>
+                            </li>
+
+                            <li class="header-cart-item">
+                                <div class="header-cart-item-img">
+                                    <img src="~/Images/item-cart-02.jpg" alt="IMG">
+                                </div>
+
+                                <div class="header-cart-item-txt">
+                                    <a href="#" class="header-cart-item-name">
+                                        Converse All Star Hi Black Canvas
+                                    </a>
+
+                                    <span class="header-cart-item-info">
+                                        1 x $39.00
+                                    </span>
+                                </div>
+                            </li>
+
+                            <li class="header-cart-item">
+                                <div class="header-cart-item-img">
+                                    <img src="~/Images/item-cart-03.jpg" alt="IMG">
+                                </div>
+
+                                <div class="header-cart-item-txt">
+                                    <a href="#" class="header-cart-item-name">
+                                        Nixon Porter Leather Watch In Tan
+                                    </a>
+
+                                    <span class="header-cart-item-info">
+                                        1 x $17.00
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="header-cart-total">
+                            Total: $75.00
+                        </div>
+
+                        <div class="header-cart-buttons">
+                            <div class="header-cart-wrapbtn">
+                                <!-- Button -->
+                                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    View Cart
+                                </a>
+                            </div>
+
+                            <div class="header-cart-wrapbtn">
+                                <!-- Button -->
+                                <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    Check Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <span class="linedivide2"></span>
 
@@ -303,37 +404,22 @@
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="index.html">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="index.html">Homepage V1</a></li>
-                        <li><a href="home-02.html">Homepage V2</a></li>
-                        <li><a href="home-03.html">Homepage V3</a></li>
-                    </ul>
-                    <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="item-menu-mobile">
+                    @Html.ActionLink("Product", "Index", "Product")
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Shop</a>
+                    @Html.ActionLink("Blog", "Index", "Blog")
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Sale</a>
+                    @Html.ActionLink("About", "Index", "About")
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="cart.html">Features</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="blog.html">Blog</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="about.html">About</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="contact.html">Contact</a>
+                    @Html.ActionLink("Contact", "Index", "Contact")
                 </li>
             </ul>
         </nav>
