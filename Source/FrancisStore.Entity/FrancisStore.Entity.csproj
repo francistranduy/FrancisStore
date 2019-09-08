@@ -76,7 +76,7 @@
       <DependentUpon>201908200440082_AddNameForFrancisStoreUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\FrancisStoreUser.cs" />
+    <Compile Include="Identity\FrancisStoreUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Products\ProductVariant.cs" />
     <Compile Include="Products\ProductVariantOption.cs" />

@@ -11,7 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using FrancisStore.Identity.Models;
-using FrancisStore.Entity.Models;
+using FrancisStore.Entity.Identity;
 using FrancisStore.Entity;
 
 namespace FrancisStore.Identity
