@@ -10,7 +10,6 @@ namespace FrancisStore.Entity.Products
 {
     public class ProductCollection
     {
-        public long ProductCollectionId { get; set; }
         [Required, DataType(DataType.Text), StringLength(255)]
         public string Name { get; set; }
         public ProductCollectionImage Image { get; set; }

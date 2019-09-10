@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -59,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="IFrancisStoreDbContext.cs" />
     <Compile Include="Migrations\201909080848485_AddProductEntities.cs" />
     <Compile Include="Migrations\201909080848485_AddProductEntities.Designer.cs">
       <DependentUpon>201909080848485_AddProductEntities.cs</DependentUpon>

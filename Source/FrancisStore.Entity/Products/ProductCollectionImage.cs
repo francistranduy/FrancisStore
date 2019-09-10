@@ -9,7 +9,6 @@ namespace FrancisStore.Entity.Products
 {
     public class ProductCollectionImage
     {
-        public long ProductCollectionImageId { get; set; }
         [Required, DataType(DataType.ImageUrl), StringLength(255)]
         public string Source { get; set; }
         public int Height { get; set; }

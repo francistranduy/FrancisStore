@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace FrancisStore.Entity.Products
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public long ProductId { get; set; }
         [Required, DataType(DataType.Text), StringLength(255)]
         public string Name { get; set; }
         [DataType(DataType.Text), StringLength(1023)]

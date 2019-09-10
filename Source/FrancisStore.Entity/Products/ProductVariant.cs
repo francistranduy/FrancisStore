@@ -9,7 +9,6 @@ namespace FrancisStore.Entity.Products
 {
     public class ProductVariant
     {
-        public long ProductVariantId { get; set; }
         [DataType(DataType.Text), StringLength(255)]
         public string Title { get; set; }
         [DataType(DataType.Text), StringLength(15)]

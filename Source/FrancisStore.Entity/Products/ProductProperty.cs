@@ -9,7 +9,6 @@ namespace FrancisStore.Entity.Products
 {
     public class ProductProperty
     {
-        public int ProductPropertyId { get; set; }
         [Required, DataType(DataType.Text), StringLength(255)]
         public string Name { get; set; }
     }
