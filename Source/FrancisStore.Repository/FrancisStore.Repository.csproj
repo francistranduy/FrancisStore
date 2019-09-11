@@ -54,6 +54,8 @@
     <Compile Include="FrancisStoreDbModule.cs" />
     <Compile Include="FrancisStoreRepository.cs" />
     <Compile Include="IFrancisStoreRepository.cs" />
+    <Compile Include="Product\IProductRepository.cs" />
+    <Compile Include="Product\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,10 +10,17 @@ namespace FrancisStore.Repository
 {
     public class FrancisStoreRepository : IFrancisStoreRepository
     {
-        private readonly IFrancisStoreDbContext context;
+        private readonly IFrancisStoreDbContext _context;
+        protected IFrancisStoreDbContext DbContext
+        {
+            get
+            {
+                return _context;
+            }
+        }
         public FrancisStoreRepository(IFrancisStoreDbContext francisStoreDbContext)
         {
-            context = francisStoreDbContext;
+            _context = francisStoreDbContext;
         }
 
         public TEntity GetById<TEntity>(long id) where TEntity : BaseEntity
@@ -38,19 +45,19 @@ namespace FrancisStore.Repository
 
         private IDbSet<TEntity> GetEntities<TEntity>() where TEntity : class
         {
-            return this.context.Set<TEntity>();
+            return this.DbContext.Set<TEntity>();
         }
 
         public void SaveChanges()
         {
-            this.context.SaveChanges();
+            this.DbContext.SaveChanges();
         }
 
         public void Dispose()
         {
-            if (this.context != null)
+            if (this.DbContext != null)
             {
-                this.context.Dispose();
+                this.DbContext.Dispose();
             }
         }
     }

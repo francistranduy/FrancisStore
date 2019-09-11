@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using FrancisStore.Entity;
+using FrancisStore.Repository.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace FrancisStore.Repository
             //Register the type-mapping, it configures which class to instantiate for which interface or base class
             builder.RegisterType<FrancisStoreDbContext>().As<IFrancisStoreDbContext>().InstancePerRequest();
             builder.RegisterType<FrancisStoreRepository>().As<IFrancisStoreRepository>().InstancePerRequest();
+            builder.RegisterType<ProductRepository>().As<IProductRepository>().InstancePerRequest();
             base.Load(builder);
         }
     }
