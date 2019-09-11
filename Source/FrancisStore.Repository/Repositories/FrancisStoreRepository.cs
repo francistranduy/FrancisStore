@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Repository
+namespace FrancisStore.Repository.Repositories
 {
     public class FrancisStoreRepository : IFrancisStoreRepository
     {
