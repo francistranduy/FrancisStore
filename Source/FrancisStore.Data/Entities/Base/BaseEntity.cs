@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Entity
+namespace FrancisStore.Data.Entities.Base
 {
     public abstract class BaseEntity
     {

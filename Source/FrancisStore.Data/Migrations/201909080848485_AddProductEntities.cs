@@ -1,4 +1,4 @@
-namespace FrancisStore.Entity.Migrations
+namespace FrancisStore.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

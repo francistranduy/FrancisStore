@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Entity.Migrations
+namespace FrancisStore.Data.Migrations
 {
     public static class Seeder
     {
         private static readonly string Base = AppDomain.CurrentDomain.BaseDirectory;
-        private static readonly string Resource = "Data";
+        private static readonly string Resource = "Seed";
         private static readonly string JsonExtension = ".json";
 
         public static IEnumerable<T> ReadFile<T>()

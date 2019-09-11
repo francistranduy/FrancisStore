@@ -1,4 +1,5 @@
-﻿using FrancisStore.Entity;
+﻿using FrancisStore.Data;
+using FrancisStore.Data.Entities.Base;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

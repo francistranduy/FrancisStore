@@ -12,7 +12,7 @@ namespace FrancisStore.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            FrancisStore.Identity.Startup.ConfigureAuth(app);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Entity
+namespace FrancisStore.Data
 {
     public interface IFrancisStoreDbContext : IDisposable
     {

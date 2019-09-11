@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Entity.Products
+namespace FrancisStore.Data.Entities.Products
 {
     public class ProductVariantOption
     {

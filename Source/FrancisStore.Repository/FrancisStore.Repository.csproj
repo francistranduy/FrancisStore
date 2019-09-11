@@ -54,7 +54,6 @@
     <Compile Include="FrancisStoreRepositoryModule.cs" />
     <Compile Include="Repositories\FrancisStoreRepository.cs" />
     <Compile Include="Repositories\IFrancisStoreRepository.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FrancisStore.Entity\FrancisStore.Entity.csproj">
+    <ProjectReference Include="..\FrancisStore.Data\FrancisStore.Data.csproj">
       <Project>{3faeb671-0bef-48a5-865e-8f32f06cac12}</Project>
-      <Name>FrancisStore.Entity</Name>
+      <Name>FrancisStore.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

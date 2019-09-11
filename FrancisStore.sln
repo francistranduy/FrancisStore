@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{4C69049E-7158-4B4C-9306-11396762C84E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Entity", "Source\FrancisStore.Entity\FrancisStore.Entity.csproj", "{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Identity", "Source\FrancisStore.Identity\FrancisStore.Identity.csproj", "{94534C17-7340-4008-931E-E1B8B97214E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Repository", "Source\FrancisStore.Repository\FrancisStore.Repository.csproj", "{71401492-826C-4AB9-9A4A-FE3C4899DDC0}"
@@ -15,16 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Web", "Source\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Service", "Source\FrancisStore.Service\FrancisStore.Service.csproj", "{1E010237-5A4F-4502-B7F2-981E4D15324D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrancisStore.Data", "Source\FrancisStore.Data\FrancisStore.Data.csproj", "{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{94534C17-7340-4008-931E-E1B8B97214E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94534C17-7340-4008-931E-E1B8B97214E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94534C17-7340-4008-931E-E1B8B97214E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,16 +37,20 @@ Global
 		{1E010237-5A4F-4502-B7F2-981E4D15324D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E010237-5A4F-4502-B7F2-981E4D15324D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E010237-5A4F-4502-B7F2-981E4D15324D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12} = {4C69049E-7158-4B4C-9306-11396762C84E}
 		{94534C17-7340-4008-931E-E1B8B97214E4} = {4C69049E-7158-4B4C-9306-11396762C84E}
 		{71401492-826C-4AB9-9A4A-FE3C4899DDC0} = {4C69049E-7158-4B4C-9306-11396762C84E}
 		{586AD2C3-4982-4B2C-A7A3-585147756AB5} = {4C69049E-7158-4B4C-9306-11396762C84E}
 		{1E010237-5A4F-4502-B7F2-981E4D15324D} = {4C69049E-7158-4B4C-9306-11396762C84E}
+		{3FAEB671-0BEF-48A5-865E-8F32F06CAC12} = {4C69049E-7158-4B4C-9306-11396762C84E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89D0E094-2DAC-4707-A6DF-00CBF5648406}

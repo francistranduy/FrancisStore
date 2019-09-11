@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using FrancisStore.Entity;
+using FrancisStore.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;

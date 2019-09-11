@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Entity.Identity
+namespace FrancisStore.Data.Entities.Identity
 {
     public class FrancisStoreUser : IdentityUser
     {

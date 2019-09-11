@@ -5,14 +5,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
+using FrancisStore.Data;
+using FrancisStore.Data.Entities.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using FrancisStore.Identity.Models;
-using FrancisStore.Entity.Identity;
-using FrancisStore.Entity;
 
 namespace FrancisStore.Identity
 {

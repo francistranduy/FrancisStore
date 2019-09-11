@@ -1,11 +1,13 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FrancisStore.Data.Entities.Base;
 
-namespace FrancisStore.Entity.Products
+namespace FrancisStore.Data.Entities.Products
 {
     public class Product : BaseEntity
     {
