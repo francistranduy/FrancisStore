@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using FrancisStore.Entity;
-using FrancisStore.Repository.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
