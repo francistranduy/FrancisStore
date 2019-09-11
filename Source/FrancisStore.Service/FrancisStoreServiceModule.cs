@@ -1,28 +1,23 @@
 ﻿using Autofac;
-using FrancisStore.Entity;
-using FrancisStore.Repository.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Repository
+namespace FrancisStore.Service
 {
-    public class FrancisStoreRepositoryModule: Module
+    public class FrancisStoreServiceModule : Autofac.Module
     {
-        public FrancisStoreRepositoryModule() {}
+        public FrancisStoreServiceModule() { }
 
         protected override void Load(ContainerBuilder builder)
         {
-            
-            //Register the type-mapping, it configures which class to instantiate for which interface or base class
-            builder.RegisterType<FrancisStoreDbContext>().As<IFrancisStoreDbContext>().InstancePerRequest();
             //Register the type-mapping, it configures which class end with "Repository" to instantiate for which interface implemented by itself.
             builder.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly())
-                .Where(type => type.Name.EndsWith("Repository"))
+                .Where(type => type.Name.EndsWith("Service"))
                 .AsImplementedInterfaces();
-
             base.Load(builder);
         }
     }
