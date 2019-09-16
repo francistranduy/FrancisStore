@@ -61,19 +61,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Base\BaseEntity.cs" />
+    <Compile Include="Entities\Products\Image.cs" />
+    <Compile Include="Entities\Products\ProductImage.cs" />
     <Compile Include="IFrancisStoreDbContext.cs" />
     <Compile Include="Migrations\201909080848485_AddProductEntities.cs" />
     <Compile Include="Migrations\201909080848485_AddProductEntities.Designer.cs">
       <DependentUpon>201909080848485_AddProductEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909162121221_AddImageTable.cs" />
+    <Compile Include="Migrations\201909162121221_AddImageTable.Designer.cs">
+      <DependentUpon>201909162121221_AddImageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Entities\Products\Collect.cs" />
     <Compile Include="Entities\Products\ProductCollection.cs" />
     <Compile Include="FrancisStoreDbContext.cs" />
-    <Compile Include="Entities\Products\ProductCollectionImage.cs" />
     <Compile Include="Entities\Products\ProductProperty.cs" />
     <Compile Include="Entities\Products\Product.cs" />
-    <Compile Include="Entities\Products\ProductImage.cs" />
     <Compile Include="Migrations\201908191820036_InitialCreate.cs" />
     <Compile Include="Migrations\201908191820036_InitialCreate.Designer.cs">
       <DependentUpon>201908191820036_InitialCreate.cs</DependentUpon>
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909080848485_AddProductEntities.resx">
       <DependentUpon>201909080848485_AddProductEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909162121221_AddImageTable.resx">
+      <DependentUpon>201909162121221_AddImageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

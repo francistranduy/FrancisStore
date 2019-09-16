@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrancisStore.Data.Entities.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FrancisStore.Data.Entities.Products
 {
-    public class ProductCollectionImage
+    public class Image : BaseEntity
     {
         [Required, DataType(DataType.ImageUrl), StringLength(255)]
         public string Source { get; set; }
