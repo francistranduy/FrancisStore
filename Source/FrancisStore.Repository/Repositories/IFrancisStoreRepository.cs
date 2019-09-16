@@ -14,5 +14,6 @@ namespace FrancisStore.Repository.Repositories
         TEntity GetById<TEntity>(long id) where TEntity : BaseEntity;
         void Insert<TEntity>(TEntity entity) where TEntity : class;
         void SaveChanges();
+        Task SaveChangesAsync();
     }
 }

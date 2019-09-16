@@ -54,6 +54,12 @@ namespace FrancisStore.Repository.Repositories
             this.DbContext.SaveChanges();
         }
 
+        public async Task SaveChangesAsync()
+        {
+            await this.DbContext.SaveChangesAsync();
+            return;
+        }
+
         public void Dispose()
         {
             if (this.DbContext != null)
