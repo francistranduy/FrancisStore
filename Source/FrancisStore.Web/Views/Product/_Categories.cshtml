@@ -1,35 +1,17 @@
-﻿<h4 class="m-text14 p-b-7">
-    Categories
-</h4>
+﻿@model IEnumerable<FrancisStore.Web.Models.CollectionViewModel>
+@if (Model.Any())
+{
+    <h4 class="m-text14 p-b-7">
+        Categories
+    </h4>
 
-<ul class="p-b-54">
-    <li class="p-t-4">
-        <a href="#" class="s-text13 active1">
-            All
-        </a>
-    </li>
+    <ul class="p-b-54">
 
-    <li class="p-t-4">
-        <a href="#" class="s-text13">
-            Women
-        </a>
-    </li>
-
-    <li class="p-t-4">
-        <a href="#" class="s-text13">
-            Men
-        </a>
-    </li>
-
-    <li class="p-t-4">
-        <a href="#" class="s-text13">
-            Kids
-        </a>
-    </li>
-
-    <li class="p-t-4">
-        <a href="#" class="s-text13">
-            Accesories
-        </a>
-    </li>
-</ul>
+        @foreach (var collection in Model)
+        {
+            <li class="p-t-4">
+                @Html.ActionLink(collection.Name, nameof(ProductController.Index), "Product", new { Id = collection.Id}, new { @class = "s-text13" })
+            </li>
+        }
+    </ul>
+}

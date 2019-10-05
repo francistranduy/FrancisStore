@@ -1,4 +1,4 @@
-﻿using FrancisStore.Data.Entities.Base;
+﻿using FrancisStore.Data.Entities.Bases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FrancisStore.Data.Entities.Products
 {
-    public class ProductVariant : BaseEntity
+    public class Variant : BaseEntity
     {
         [DataType(DataType.Text), StringLength(255)]
         public string Title { get; set; }
@@ -19,6 +19,6 @@ namespace FrancisStore.Data.Entities.Products
         public int Position { get; set; }
         public long ProductId { get; set; }
         public virtual Product Product { get; set; }
-        public virtual ICollection<ProductVariantOption> Options { get; set; }
+        public virtual ICollection<Option> Options { get; set; }
     }
 }

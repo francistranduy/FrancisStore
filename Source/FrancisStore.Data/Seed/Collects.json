@@ -1,0 +1,38 @@
+[
+  {
+    "Id" :  1,
+    "Position": 1,
+    "CollectionId": 1,
+    "ProductId": 1
+  },
+  {
+    "Id": 2,
+    "ProductId": 2,
+    "CollectionId": 1,
+    "Position": 1
+  },
+  {
+    "Id": 3,
+    "ProductId": 3,
+    "CollectionId": 1,
+    "Position": 1
+  },
+  {
+    "Id": 4,
+    "Position": 1,
+    "CollectionId": 1,
+    "ProductId": 4
+  },
+  {
+    "Id": 5,
+    "Position": 1,
+    "CollectionId": 1,
+    "ProductId": 5
+  },
+  {
+    "Id": 6,
+    "Position": 1,
+    "CollectionId": 1,
+    "ProductId": 6
+  }
+]

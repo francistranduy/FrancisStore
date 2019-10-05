@@ -1,4 +1,4 @@
-﻿using FrancisStore.Data.Entities.Base;
+﻿using FrancisStore.Data.Entities.Bases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +10,7 @@ namespace FrancisStore.Data.Entities.Products
 {
     public class Image : BaseEntity
     {
-        [Required, DataType(DataType.ImageUrl), StringLength(255)]
+        [Required, DataType(DataType.Text), StringLength(255)]
         public string Source { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }

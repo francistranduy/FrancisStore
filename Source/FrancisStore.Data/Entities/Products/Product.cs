@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FrancisStore.Data.Entities.Base;
+using FrancisStore.Data.Entities.Bases;
 
 namespace FrancisStore.Data.Entities.Products
 {
@@ -24,6 +24,6 @@ namespace FrancisStore.Data.Entities.Products
 
         public virtual ICollection<Collect> Collects { get; set; }
         public virtual ICollection<ProductImage> Images { get; set; }
-        public virtual ICollection<ProductVariant> Variants { get; set; }
+        public virtual ICollection<Variant> Variants { get; set; }
     }
 }

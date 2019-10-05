@@ -34,7 +34,14 @@
     <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,19 +52,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrancisStoreServiceModule.cs" />
+    <Compile Include="Products\Models\Product.cs" />
+    <Compile Include="Products\Models\Collection.cs" />
+    <Compile Include="Products\Models\ProductDetail.cs" />
+    <Compile Include="Products\Models\Variant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Products\Interfaces\ICollectionService.cs" />
+    <Compile Include="Products\Interfaces\IProductService.cs" />
+    <Compile Include="Products\Services\CollectionService.cs" />
+    <Compile Include="Products\Services\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FrancisStore.Data\FrancisStore.Data.csproj">
       <Project>{3faeb671-0bef-48a5-865e-8f32f06cac12}</Project>
       <Name>FrancisStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrancisStore.Repository\FrancisStore.Repository.csproj">
+      <Project>{71401492-826c-4ab9-9a4a-fe3c4899ddc0}</Project>
+      <Name>FrancisStore.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

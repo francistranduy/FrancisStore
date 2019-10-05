@@ -1,0 +1,62 @@
+[
+  {
+    "ProductId": 1,
+    "ImageId": 1
+  },
+  {
+    "ProductId": 1,
+    "ImageId": 2
+  },
+  {
+    "ProductId": 1,
+    "ImageId": 3
+  },
+  {
+    "ProductId": 1,
+    "ImageId": 4
+  },
+  {
+    "ProductId": 2,
+    "ImageId": 2
+  },
+  {
+    "ProductId": 3,
+    "ImageId": 3
+  },
+  {
+    "ProductId": 4,
+    "ImageId": 4
+  },
+  {
+    "ProductId": 5,
+    "ImageId": 5
+  },
+  {
+    "ProductId": 6,
+    "ImageId": 6
+  },
+  {
+    "ProductId": 7,
+    "ImageId": 7
+  },
+  {
+    "ProductId": 8,
+    "ImageId": 8
+  },
+  {
+    "ProductId": 9,
+    "ImageId": 9
+  },
+  {
+    "ProductId": 10,
+    "ImageId": 10
+  },
+  {
+    "ProductId": 11,
+    "ImageId": 11
+  },
+  {
+    "ProductId": 12,
+    "ImageId": 12
+  }
+]

@@ -14,19 +14,17 @@ namespace FrancisStore.Data.Migrations
         private static readonly string Resource = "Seed";
         private static readonly string JsonExtension = ".json";
 
-        public static IEnumerable<T> ReadFile<T>()
+        public static IEnumerable<T> ReadFile<T>(string fileName)
         {
-            var fileName = typeof(T).Name;
+            if (string.IsNullOrEmpty(fileName))
+                return default;
             var path = Path.Combine(Base, Resource, fileName + JsonExtension);
-            if (File.Exists(path))
-            {
-                var json = File.ReadAllText(path);
-                var items = JsonConvert.DeserializeObject<IEnumerable<T>>(json);
-                Console.WriteLine(items.Count());
-                return items;
-            }
+            if (!File.Exists(path))
+                return default;
 
-            return default;
+            var json = File.ReadAllText(path);
+            var items = JsonConvert.DeserializeObject<IEnumerable<T>>(json);
+            return items;
         }
     }
 }

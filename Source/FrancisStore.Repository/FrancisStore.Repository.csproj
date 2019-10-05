@@ -51,10 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bases\GenericRepository.cs" />
+    <Compile Include="Bases\IGenericRepository.cs" />
     <Compile Include="FrancisStoreRepositoryModule.cs" />
-    <Compile Include="Repositories\FrancisStoreRepository.cs" />
-    <Compile Include="Repositories\IFrancisStoreRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWorks\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWorks\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

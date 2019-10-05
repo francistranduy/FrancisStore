@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrancisStore.Repository.Repositories
+namespace FrancisStore.Repository.Product
 {
     public class FrancisStoreRepository : IFrancisStoreRepository
     {
@@ -24,9 +25,9 @@ namespace FrancisStore.Repository.Repositories
             _context = francisStoreDbContext;
         }
 
-        public TEntity GetById<TEntity>(long id) where TEntity : BaseEntity
+        public async Task<TEntity> GetById<TEntity>(long id) where TEntity : BaseEntity
         {
-            return GetAll<TEntity>().Where(e => e.Id == id).FirstOrDefault();
+            return await GetEntities<TEntity>().Where(e => e.Id == id).FirstOrDefaultAsync();
         }
 
         public IQueryable<TEntity> GetAll<TEntity>() where TEntity : class

@@ -1,4 +1,4 @@
-﻿using FrancisStore.Data.Entities.Base;
+﻿using FrancisStore.Data.Entities.Bases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace FrancisStore.Data.Entities.Products
 {
-    public class ProductCollection: BaseEntity
+    public class Collection: BaseEntity
     {
         [Required, DataType(DataType.Text), StringLength(255)]
         public string Name { get; set; }
-        public long? ImageId { get; set; }
+        public long ImageId { get; set; }
         public virtual Image Image { get; set; }
         public virtual ICollection<Collect> Collects { get; set; }
     }

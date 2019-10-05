@@ -1,4 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using Autofac;
+using FrancisStore.Repository;
+using FrancisStore.Service;
+using FrancisStore.Web.Controllers;
+using Microsoft.Owin;
 using Owin;
 using System;
 using System.Collections.Generic;

@@ -1,0 +1,42 @@
+[
+  {
+    "VariantId": 1,
+    "PropertyId": 1,
+    "Value": "Back"
+  },
+  {
+    "VariantId": 1,
+    "PropertyId": 2,
+    "Value": "M"
+  },
+  {
+    "VariantId": 2,
+    "PropertyId": 1,
+    "Value": "Back"
+  },
+  {
+    "VariantId": 2,
+    "PropertyId": 2,
+    "Value": "X"
+  },
+  {
+    "VariantId": 3,
+    "PropertyId": 1,
+    "Value": "Back"
+  },
+  {
+    "VariantId": 3,
+    "PropertyId": 2,
+    "Value": "XL"
+  },
+  {
+    "VariantId": 4,
+    "PropertyId": 1,
+    "Value": "Blue"
+  },
+  {
+    "VariantId": 4,
+    "PropertyId": 2,
+    "Value": "M"
+  }
+]

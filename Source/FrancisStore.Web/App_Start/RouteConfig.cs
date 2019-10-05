@@ -13,6 +13,20 @@ namespace FrancisStore.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute( name: "Collection", url: "Collection/{Id}", defaults: new
+            //{
+            //    controller = "Product",
+            //    action = "Index",
+            //    Id = UrlParameter.Optional
+            //});
+
+            //routes.MapRoute(name: "Product",url: "Product/{Id}", defaults: new
+            //{
+            //    controller = "Product",
+            //    action = "Details",
+            //    Id = UrlParameter.Optional
+            //});
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

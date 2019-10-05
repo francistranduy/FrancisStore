@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "Position": 1,
+    "Price": 54,
+    "ProductId": 1,
+    "SKU": "MUG-02",
+    "Title": "Boxy T-Shirt with Roll Sleeve Detail"
+  },
+  {
+    "Id": 2,
+    "Position": 1,
+    "Price": 55,
+    "ProductId": 1,
+    "SKU": "MUG-02",
+    "Title": "Boxy T-Shirt with Roll Sleeve Detail"
+  },
+  {
+    "Id": 3,
+    "Position": 1,
+    "Price": 54,
+    "ProductId": 1,
+    "SKU": "MUG-03",
+    "Title": "Boxy T-Shirt with Roll Sleeve Detail"
+  },
+  {
+    "Id": 4,
+    "Position": 1,
+    "Price": 56,
+    "ProductId": 1,
+    "SKU": "MUG-04",
+    "Title": "Boxy T-Shirt with Roll Sleeve Detail"
+  }
+]

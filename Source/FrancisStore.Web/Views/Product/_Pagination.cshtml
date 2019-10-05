@@ -1,4 +1,7 @@
-﻿<div class="pagination flex-m flex-w p-t-26">
-    <a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-    <a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
+﻿@model FrancisStore.Web.Models.PagedListViewModel
+<div class="pagination flex-m flex-w p-t-26">
+    @for (var i = 1; i - 1 <= (Model.Total - 1) / Model.PageSize; i++)
+    {
+        @Html.ActionLink(i.ToString(), nameof(ProductController.Index), "Product", new { Page = i, PageSize = Model.PageSize, SearchString = Model.Search }, new { @class = "item-pagination flex-c-m trans-0-4" + (i == Model.Page ? " active-pagination": "") });
+    }
 </div>

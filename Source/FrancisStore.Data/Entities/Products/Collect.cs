@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrancisStore.Data.Entities.Bases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,15 +9,12 @@ using System.Threading.Tasks;
 
 namespace FrancisStore.Data.Entities.Products
 {
-    public class Collect
+    public class Collect : BaseEntity
     {
-        [Key, Column(Order = 1)]
         public long ProductId { get; set; }
-        [Key, Column(Order = 2)]
-        public long ProductCollectionId { get; set; }
+        public long CollectionId { get; set; }
         public int Position { get; set; }
-
         public virtual Product Product { get; set; }
-        public virtual ProductCollection Collection { get; set; }
+        public virtual Collection Collection { get; set; }
     }
 }
