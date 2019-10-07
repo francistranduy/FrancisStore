@@ -2,41 +2,356 @@
   {
     "VariantId": 1,
     "PropertyId": 1,
-    "Value": "Back"
+    "Value": "Copper / Brown / Serape"
   },
   {
-    "VariantId": 1,
+    "VariantId": 2,
+    "PropertyId": 1,
+    "Value": "All Gold / Black"
+  },
+  {
+    "VariantId": 3,
+    "PropertyId": 1,
+    "Value": "Gold \/ Black"
+  },
+  {
+    "VariantId": 4,
+    "PropertyId": 1,
+    "Value": "Navy / Brown"
+  },
+  {
+    "VariantId": 5,
+    "PropertyId": 1,
+    "Value": "All Black / Rose Gold"
+  },
+  {
+    "VariantId": 6,
+    "PropertyId": 1,
+    "Value": "All Black / Rose Gold"
+  },
+  {
+    "VariantId": 7,
+    "PropertyId": 1,
+    "Value": "All Matte Petal"
+  },
+  {
+    "VariantId": 8,
+    "PropertyId": 1,
+    "Value": "Gold / Black / Mickey Hand"
+  },
+  {
+    "VariantId": 9,
+    "PropertyId": 1,
+    "Value": "All Black"
+  },
+  {
+    "VariantId": 10,
+    "PropertyId": 1,
+    "Value": "All Gold"
+  },
+  {
+    "VariantId": 11,
+    "PropertyId": 1,
+    "Value": "All Rose Gold"
+  },
+  {
+    "VariantId": 12,
+    "PropertyId": 1,
+    "Value": "Rose Gold / Gray"
+  },
+  {
+    "VariantId": 13,
+    "PropertyId": 1,
+    "Value": "Silver / Black / Red"
+  },
+  {
+    "VariantId": 14,
+    "PropertyId": 1,
+    "Value": "Gold / Black"
+  },
+  {
+    "VariantId": 15,
+    "PropertyId": 1,
+    "Value": "Black"
+  },
+  {
+    "VariantId": 15,
+    "PropertyId": 2,
+    "Value": "S"
+  },
+  {
+    "VariantId": 16,
+    "PropertyId": 1,
+    "Value": "Black"
+  },
+  {
+    "VariantId": 16,
     "PropertyId": 2,
     "Value": "M"
   },
   {
-    "VariantId": 2,
+    "VariantId": 17,
     "PropertyId": 1,
-    "Value": "Back"
+    "Value": "Black"
   },
   {
-    "VariantId": 2,
+    "VariantId": 17,
     "PropertyId": 2,
-    "Value": "X"
+    "Value": "L"
   },
   {
-    "VariantId": 3,
+    "VariantId": 18,
     "PropertyId": 1,
-    "Value": "Back"
+    "Value": "Black"
   },
   {
-    "VariantId": 3,
+    "VariantId": 18,
     "PropertyId": 2,
     "Value": "XL"
   },
   {
-    "VariantId": 4,
+    "VariantId": 19,
     "PropertyId": 1,
-    "Value": "Blue"
+    "Value": "Black"
   },
   {
-    "VariantId": 4,
+    "VariantId": 19,
+    "PropertyId": 2,
+    "Value": "XXL"
+  },
+  {
+    "VariantId": 20,
+    "PropertyId": 1,
+    "Value": "White"
+  },
+  {
+    "VariantId": 20,
+    "PropertyId": 2,
+    "Value": "S"
+  },
+  {
+    "VariantId": 21,
+    "PropertyId": 1,
+    "Value": "White"
+  },
+  {
+    "VariantId": 21,
     "PropertyId": 2,
     "Value": "M"
+  },
+  {
+    "VariantId": 22,
+    "PropertyId": 1,
+    "Value": "White"
+  },
+  {
+    "VariantId": 22,
+    "PropertyId": 2,
+    "Value": "L"
+  },
+  {
+    "VariantId": 23,
+    "PropertyId": 1,
+    "Value": "White"
+  },
+  {
+    "VariantId": 23,
+    "PropertyId": 2,
+    "Value": "XL"
+  },
+  {
+    "VariantId": 24,
+    "PropertyId": 1,
+    "Value": "White"
+  },
+  {
+    "VariantId": 24,
+    "PropertyId": 2,
+    "Value": "XXL"
+  },
+  {
+    "VariantId": 25,
+    "PropertyId": 1,
+    "Value": "Navy"
+  },
+  {
+    "VariantId": 25,
+    "PropertyId": 2,
+    "Value": "S"
+  },
+  {
+    "VariantId": 26,
+    "PropertyId": 1,
+    "Value": "Navy"
+  },
+  {
+    "VariantId": 26,
+    "PropertyId": 2,
+    "Value": "M"
+  },
+  {
+    "VariantId": 27,
+    "PropertyId": 1,
+    "Value": "Navy"
+  },
+  {
+    "VariantId": 27,
+    "PropertyId": 2,
+    "Value": "L"
+  },
+  {
+    "VariantId": 28,
+    "PropertyId": 1,
+    "Value": "Navy"
+  },
+  {
+    "VariantId": 28,
+    "PropertyId": 2,
+    "Value": "XL"
+  },
+  {
+    "VariantId": 29,
+    "PropertyId": 1,
+    "Value": "Navy"
+  },
+  {
+    "VariantId": 29,
+    "PropertyId": 2,
+    "Value": "XXL"
+  },
+  {
+    "VariantId": 30,
+    "PropertyId": 1,
+    "Value": "Black"
+  },
+  {
+    "VariantId": 30,
+    "PropertyId": 2,
+    "Value": "S"
+  },
+  {
+    "VariantId": 31,
+    "PropertyId": 1,
+    "Value": "Black"
+  },
+  {
+    "VariantId": 31,
+    "PropertyId": 2,
+    "Value": "M"
+  },
+  {
+    "VariantId": 32,
+    "PropertyId": 1,
+    "Value": "Navy Heather"
+  },
+  {
+    "VariantId": 32,
+    "PropertyId": 2,
+    "Value": "S"
+  },
+  {
+    "VariantId": 33,
+    "PropertyId": 1,
+    "Value": "White"
+  },
+  {
+    "VariantId": 33,
+    "PropertyId": 2,
+    "Value": "S"
+  },
+  {
+    "VariantId": 34,
+    "PropertyId": 1,
+    "Value": "White"
+  },
+  {
+    "VariantId": 34,
+    "PropertyId": 2,
+    "Value": "M"
+  },
+  {
+    "VariantId": 35,
+    "PropertyId": 1,
+    "Value": "Rebel Pilot Orange"
+  },
+  {
+    "VariantId": 35,
+    "PropertyId": 2,
+    "Value": "XS/S"
+  },
+  {
+    "VariantId": 36,
+    "PropertyId": 1,
+    "Value": "Rebel Pilot Orange"
+  },
+  {
+    "VariantId": 36,
+    "PropertyId": 2,
+    "Value": "M/L"
+  },
+  {
+    "VariantId": 37,
+    "PropertyId": 1,
+    "Value": "Black / Gold"
+  },
+  {
+    "VariantId": 37,
+    "PropertyId": 2,
+    "Value": "XS"
+  },
+  {
+    "VariantId": 38,
+    "PropertyId": 1,
+    "Value": "Black / Gold"
+  },
+  {
+    "VariantId": 38,
+    "PropertyId": 2,
+    "Value": "S"
+  },
+  {
+    "VariantId": 39,
+    "PropertyId": 1,
+    "Value": "Black / Gold"
+  },
+  {
+    "VariantId": 39,
+    "PropertyId": 2,
+    "Value": "M"
+  },
+  {
+    "VariantId": 40,
+    "PropertyId": 1,
+    "Value": "Black / Gold"
+  },
+  {
+    "VariantId": 40,
+    "PropertyId": 2,
+    "Value": "L"
+  },
+  {
+    "VariantId": 41,
+    "PropertyId": 1,
+    "Value": "Black / Gold"
+  },
+  {
+    "VariantId": 41,
+    "PropertyId": 2,
+    "Value": "XL"
+  },
+  {
+    "VariantId": 42,
+    "PropertyId": 1,
+    "Value": "Black"
+  },
+  {
+    "VariantId": 43,
+    "PropertyId": 1,
+    "Value": "Oyster"
+  },
+  {
+    "VariantId": 44,
+    "PropertyId": 1,
+    "Value": "Brown / Black"
   }
 ]

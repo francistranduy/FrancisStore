@@ -1,98 +1,84 @@
 [
   {
     "Id": 1,
-    "Name": "Herschel supply co 25l",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Porter Leather, 40 MM",
+    "Note": "Giving you the first-class experience all the way, the Porter Leather looks as good as it feels-in no particular order. Its sleek profile and sophisticated design sit comfortably in any scenario, in other words, it takes any outfit up to the highest level.",
+    "Tags": "Men's Watches",
+    "Description": "<p><b>DESIGN</b></p><p>The amenities of life behind the VIP rope and the appreciation of the finer details are at the core of the Porter's style.</p><p><b>DURABILITY</b></p><p>Features a custom stainless steel case, hardened mineral crystal, tapered custom leather strap, and stainless steel screw-down caseback for protection against everyday wear and tear.</p><p><b>SPECIAL FEATURE</b></p><p>Ultra-thin, tapered case for minimal weight and maximum wearability.</p><p><b>MOVEMENT</b></p><p>Miyota Japanese quartz 3 hand movement</p><p><b>WATER RATING</b></p><p>50 METER \/ 5 ATM</p>",
+    "AdditionalInformation": "<p><b>Watch Movement</b></p><p>Miyota Japanese quartz 3 hand movement and crown placement at 3 o'clock.</p><p><b>Watch Dial</b></p><p>The dial features bold printed hour indices and a stamped seconds track.</p><p><b>Watch Case</b></p><p>40mm, 50 meter\/5 ATM custom stainless steel case, hardened mineral crystal, double gasket crown, stainless steel screw down caseback, and spring pin lugs.</p><p><b>Watch Band</b></p><p>20-18mm tapered custom genuine leather strap with custom solid stainless steel buckle closure.</p><p><b>Water Rating</b></p><p>50 METER \/ 5 ATM</p><p><b>Warranty</b></p><p>Nixon offers a limited warranty of defects in materials and workmanship for a period of two (2) years after original purchase from nixon.com or an authorized Nixon dealer. This means that if the materials in your watch aren't right or if the watch isn't put together correctly, we'll repair or replace it, at our option. But, this doesn't mean you can abuse your watch and expect us to fix it for free. We don't cover normal wear and tear or batteries*, crystal, watch case, strap, bracelet, loss or theft. You will void your warranty if you open your case back, push the buttons underwater, or forget to screw down or push in the crown and expose your watch to moisture. Proof of purchase is required for all warranty claims and service requests, so hold onto your receipt. Nixon will not accept a warranty claim or repair request if a watch has evidence of excessive wear or misuse.</p>"
   },
   {
     "Id": 2,
-    "Name": "Denim jacket blue",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Time Teller, 37 MM",
+    "Note": "An icon of Nixon heritage, the Time Teller's vibe celebrates simple sophistication. The minimalist design is the perfect canvas for your aesthetic expression, while its 100m /10 ATM waterproof rating means getting wet is no big deal. It's always down to collaborate and with a full spectrum of finishes, whatever your style, there's a Time Teller for you.",
+    "Tags": "Men's Watches",
+    "Description": "<p><b>DESIGN</b></p><p>Modeled after watches that were passed down from generation to generation, the Time Teller was created to have a classic silhouette with a modern spin.</p><p><b>DURABILITY</b></p><p>100m /10 ATM waterproof rating lets you go from dry to wet environments with confidence.</p><p><b>SPECIAL FEATURE</b></p><p>Custom jewelry style bracelet with sliding buckle or leather band with buckle fits just about everyone.</p><p><b>MOVEMENT</b></p><p>Miyota Japanese quartz 3 hand.</p><p><b>WATER RATING</b></p><p>100 Meter \/ 10 ATM</p>",
+    "AdditionalInformation": "<p><b>Watch Movement</b></p><p>Miyota Japanese quartz 3 hand.</p><p><b>Watch Dial</b></p><p>The dial includes applied indices, and custom molded hands.</p><p><b>Watch Case</b></p><p>37 mm, 100 meter / 10 ATM , custom solid stainless steel case, solid stainless steel fixed bezel, hardened mineral crystal, triple gasket stainless steel crown, stainless steel screw down caseback and spring pin lugs.</p><p><b>Watch Band</b></p><p>19.5-18 mm tapered custom 5 link stainless steel jewelry style bracelet (or leather/canvas) and adjustable stainless steel locking clasp.</p><p><b>Water Rating</b></p><p>100 METER \/ 10 ATM</p>"
   },
   {
     "Id": 3,
-    "Name": "Coach slim easton black",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Siren Milanese, 36 MM",
+    "Note": "Don't leave your style at the shoreline. The Siren fuses eye-catching design with an up-for-anything attitude. Basic tide functionality lets you know when to hit the beach, sport-ready water resistance means it’s not scared to get wet, and the custom milanese band for a chic look.",
+    "Tags": "Women's Watches",
+    "Description": "<p><b>DESIGN</b></p><p>Taking cues from high-end activewear, the Siren is equal parts comfort, function, and style.</p><p><b>DURABILITY</b></p><p>Custom stainless steel caseback and gasket pushers.</p><p><b>SPECIAL FEATURE</b></p><p>Toggle between basic tide functionality and date. It also features a chronograph, and countdown timer.</p><p><b>MOVEMENT</b></p><p>Custom digital module.</p><p><b>WATER RATING</b></p><p>100 Meter \/ 10 ATM</p>",
+    "AdditionalInformation": "<p><b>Watch Movement</b></p><p>Custom digital module with basic tide. Functions include time of day (12 hour or 24 hour), date calendar through 2099, basic tide, future tide, EL backlight, chronograph, and customizable countdown timer. Home screen can be set to display time and date or time and tide.</p><p><b>Watch Dial</b></p><p>Custom negative LCD with a printed dial masking.</p><p><b>Watch Case</b></p><p>36mm, 100 meter/10 ATM, custom stainless steel case and pushers, stainless steel screw down caseback, and stainless steel screw bar lugs.</p><p><b>Watch Band</b></p><p>18mm custom stainless steel Milanese bracelet with stainless steel sliding adjustment buckle and screw-bars.</p><p><b>Water Rating</b></p><p>100 METER / 10 ATM</p><p><b>Warranty</b></p><p>Nixon offers a limited warranty of defects in materials and workmanship for a period of two (2) years after original purchase from nixon.com or an authorized Nixon dealer. This means that if the materials in your watch aren't right or if the watch isn't put together correctly, we'll repair or replace it, at our option. But, this doesn't mean you can abuse your watch and expect us to fix it for free. We don't cover normal wear and tear or batteries*, crystal, watch case, strap, bracelet, loss or theft. You will void your warranty if you open your case back, push the buttons underwater, or forget to screw down or push in the crown and expose your watch to moisture. Proof of purchase is required for all warranty claims and service requests, so hold onto your receipt. Nixon will not accept a warranty claim or repair request if a watch has evidence of excessive wear or misuse.</p>"
   },
   {
     "Id": 4,
-    "Name": "Frayed denim shorts",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Medium Kensington Leather, 32 MM",
+    "Note": "Pretty and petite, the Medium Kensington Leather has narrowed lugs for a band slender as an ankle strap and pointed hands that are stiletto slim. This one arrives at chic without breaking a sweat.",
+    "Tags": "Women's Watches",
+    "Description": "<p><b>The Right Fit</b></p><p>Medium size fights most wrists with a 32mm stainless steel case and a hardened mineral crystal.</p><p><b>Clean Lines</b></p><p>3 hand movement with understated contemporary appeal.</p><p><b>12mm Custom Leather</b></p><p>Custom leather band with a custom buckle.</p>",
+    "AdditionalInformation": "<p><b>Watch Movement</b></p><p>Miyota Japanese quartz 3 hand.</p><p><b>Watch Dial</b></p><p>This dial includes engraved and printed indices and custom molded hands.</p><p><b>Watch Case</b></p><p>32mm, 50 meter/ 5ATM solid stainless steel case with a hardened mineral crystal, stainless steel snap fit caseback and spring pin lugs.</p><p><b>Watch Band</b></p><p>12mm custom leather band with a custom buckle</p><p><b>Water Rating</b></p><p>50 METER / 5 ATM</p><p><b>Warranty</b></p><p>Nixon offers a limited warranty of defects in materials and workmanship for a period of two (2) years after original purchase from nixon.com or an authorized Nixon dealer. This means that if the materials in your watch aren't right or if the watch isn't put together correctly, we'll repair or replace it, at our option. But, this doesn't mean you can abuse your watch and expect us to fix it for free. We don't cover normal wear and tear or batteries*, crystal, watch case, strap, bracelet, loss or theft. You will void your warranty if you open your case back, push the buttons underwater, or forget to screw down or push in the crown and expose your watch to moisture. Proof of purchase is required for all warranty claims and service requests, so hold onto your receipt. Nixon will not accept a warranty claim or repair request if a watch has evidence of excessive wear or misuse.</p>"
   },
   {
     "Id": 5,
-    "Name": "Herschel supply co 25l",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Waves Long Sleeve T-Shirt",
+    "Note": "Every piece is 100% custom built, which means the right fit, the right cut, no cookie-cutter, one-size-fits-all design is what you can count on and what you'll get.",
+    "Tags": "T-Shirts",
+    "AdditionalInformation": "<p><b>FEATURES</b></p><p>6 oz. 100% cotton tee with 1x1 rib cuffs, finished with custom trim details and soft hand print.</p>"
   },
   {
     "Id": 6,
-    "Name": "Denim jacket blue",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Pool Service T-Shirt",
+    "Note": "A ring spun cotton tee finished with custom trim details and soft hand print.",
+    "Tags": "T-Shirts",
+    "AdditionalInformation": "<p><b>FEATURES</b></p><p>30 singles, Ring Spun Cotton short sleeve tee with custom graphic in a soft hand plastisol and custom trims</p>"
   },
   {
     "Id": 7,
-    "Name": "Coach slim easton black",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "NW Hossegor T-Shirt",
+    "Note": "Constructed around decades of making the little stuff better, we're driven to create products to reflect our unique point of view, our heritage, our style and we don't stop until we get it right. Every piece is 100% custom built, which means the right fit, the right cut, no cookie-cutter, one-size-fits-all design is what you can count on and what you'll get.",
+    "Tags": "T-Shirts",
+    "AdditionalInformation": "<p><b>Short Sleeve Tee</b></p><p>100% Cotton</p><p><b>Nixon Logo Sleeve Trims</b></p><p>Custom graphic</p>"
   },
   {
     "Id": 8,
-    "Name": "Frayed denim shorts",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Extend Belt Star Wars",
+    "Tags": "Belts",
+    "AdditionalInformation": "<p><b>Buckle Width</b></p><p>5cm</p><p><b>Buckle Height</b></p><p>5cm</p><p><b>Strap Width</b></p><p>3.5cm</p>"
   },
   {
     "Id": 9,
-    "Name": "Herschel supply co 25l",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Icon Cut Out Vegan Belt",
+    "Note": "Vegan leather strap belt. Features a laser cut-out prong buckle with Icon logo detail and an embossed logo at strap end.",
+    "Tags": "Belts",
+    "AdditionalInformation": "<p><b>FEATURES</b></p><p>Vegan leather strap. Laser cut out prong buckle with Icon detail. Embossed logo detail at strap end.</p><p><b>Buckle Width</b></p><p>7cm</p><p><b>Buckle Height</b></p><p>5.6cm</p><p><b>Strap Width</b></p><p>3.8cm</p>"
   },
   {
     "Id": 10,
-    "Name": "Denim jacket blue",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Logic Camera Bag II",
+    "Note": "Nixon bags and backpacks focus on quality, function, design and did we mention that we travel the world testing them out? Get ready to be taken to a new level.",
+    "Tags": "Bags",
+    "Description": "<p><b>Camera backpack</b></p><p>Top compartment with internal organization pockets</p><p><b>Separate top compartment</b></p><p>Internal organization pockets, including watch pocket, and access to camera gear section.</p><p><b>Cotton/Nylon distressed PU coated canvas</b></p><p>Icon Embossed 210D Nylon Lining</p><p><b>12.5\" x 7\" x 18\"</b></p><p>Weight capacity of 49.5lb/22.4kg</p>",
+    "AdditionalInformation": "<p><b>FEATURES</b></p><p>Camera backpack using distressed PU coated canvas. Removable padded camera block detail. Separate top compartment with internal organization pockets, including watch pocket, and access to camera gear section. Side entry padded laptop compartment. Front zipper storage pocket and back panel security pocket. Padded shoulder straps with air mesh back padding. Adjustable sternum strap. Leather zipper pulls. Logo embossed silicone loop for attachments with a weight capacity of 49.5lb\/22.4kg. No sew badge logo detail.</p><p><b>BOTTOM:</b></p><p>PU Coated Distressed Canvas</p><p><b>LINING:</b></p><p>Icon Embossed 210D Nylon</p><p><b>DIMENSIONS:</b></p><p>32cm x 18cm x 46cm</p>"
   },
   {
     "Id": 11,
-    "Name": "Coach slim easton black",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
-  },
-  {
-    "Id": 12,
-    "Name": "Frayed denim shorts",
-    "Note": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-    "Tags": "Mug, Design",
-    "Description": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat",
-    "AdditionalInformation": "Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat"
+    "Name": "Limpio Dopp Kit II",
+    "Note": "Nixon bags and backpacks focus on quality, function, design and did we mention that we travel the world testing them out? Get ready to be taken to a new level.",
+    "Tags": "Bags",
+    "Description": "<p><b>Leather Dopp kit</b></p><p>100% U.S. Hide Leather</p><p><b>10\" x 5\" x 5.75\"</b></p><p>Dual zip main pocket, leather pulls, Side fold over tabs, custom metal hardware, Front zip pocket.</p>",
+    "AdditionalInformation": "<p><b>FEATURES</b></p><p>Dopp kit built from U.S. leather hides and handcrafted in Mexico. Dual zippered main compartment with leather pulls. Side fold over tabs with custom metal hardware. Front zip accessory pocket. Debossed logo detail.</p><p><b>BOTTOM:</b></p><p>Leather</p><p><b>LINING:</b></p><p>100% Polyester</p><p><b>DIMENSIONS:</b></p><p>25cm x 13cm x 15cm</p>"
   }
 ]

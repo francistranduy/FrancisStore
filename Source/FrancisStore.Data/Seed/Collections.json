@@ -1,7 +1,26 @@
 [
   {
     "Id": 1,
-    "ImageId": 1,
     "Name": "All"
+  },
+  {
+    "Id": 2,
+    "Name": "Men's Watches"
+  },
+  {
+    "Id": 3,
+    "Name": "Women's Watches"
+  },
+  {
+    "Id": 4,
+    "Name": "T-Shirts"
+  },
+  {
+    "Id": 5,
+    "Name": "Belts"
+  },
+  {
+    "Id": 6,
+    "Name": "Bags"
   }
 ]
