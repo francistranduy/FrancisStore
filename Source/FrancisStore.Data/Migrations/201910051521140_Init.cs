@@ -3,47 +3,33 @@ namespace FrancisStore.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddImageTable : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Collects",
-                c => new
-                    {
-                        ProductId = c.Long(nullable: false),
-                        ProductCollectionId = c.Long(nullable: false),
-                        Position = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.ProductId, t.ProductCollectionId })
-                .ForeignKey("dbo.ProductCollections", t => t.ProductCollectionId, cascadeDelete: true)
-                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId)
-                .Index(t => t.ProductCollectionId);
-            
-            CreateTable(
-                "dbo.ProductCollections",
+                "dbo.Collections",
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 255),
-                        ImageId = c.Long(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Images", t => t.ImageId)
-                .Index(t => t.ImageId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Images",
+                "dbo.Collects",
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
-                        Source = c.String(nullable: false, maxLength: 255),
-                        Height = c.Int(nullable: false),
-                        Width = c.Int(nullable: false),
-                        AlternativeText = c.String(maxLength: 255),
+                        ProductId = c.Long(nullable: false),
+                        CollectionId = c.Long(nullable: false),
+                        Position = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Collections", t => t.CollectionId, cascadeDelete: true)
+                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
+                .Index(t => t.ProductId)
+                .Index(t => t.CollectionId);
             
             CreateTable(
                 "dbo.Products",
@@ -64,15 +50,28 @@ namespace FrancisStore.Data.Migrations
                     {
                         Id = c.Long(nullable: false, identity: true),
                         ProductId = c.Long(nullable: false),
-                        Source = c.String(nullable: false, maxLength: 255),
-                        Alternative = c.String(maxLength: 255),
+                        ImageId = c.Long(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Images", t => t.ImageId, cascadeDelete: true)
                 .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId);
+                .Index(t => t.ProductId)
+                .Index(t => t.ImageId);
             
             CreateTable(
-                "dbo.ProductVariants",
+                "dbo.Images",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        Source = c.String(nullable: false, maxLength: 255),
+                        Height = c.Int(nullable: false),
+                        Width = c.Int(nullable: false),
+                        AlternativeText = c.String(maxLength: 255),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Variants",
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
@@ -87,21 +86,22 @@ namespace FrancisStore.Data.Migrations
                 .Index(t => t.ProductId);
             
             CreateTable(
-                "dbo.ProductVariantOptions",
+                "dbo.Options",
                 c => new
                     {
-                        ProductVariantId = c.Long(nullable: false),
-                        ProductPropertyId = c.Long(nullable: false),
+                        Id = c.Long(nullable: false, identity: true),
+                        VariantId = c.Long(nullable: false),
+                        PropertyId = c.Long(nullable: false),
                         Value = c.String(maxLength: 255),
                     })
-                .PrimaryKey(t => new { t.ProductVariantId, t.ProductPropertyId })
-                .ForeignKey("dbo.ProductProperties", t => t.ProductPropertyId, cascadeDelete: true)
-                .ForeignKey("dbo.ProductVariants", t => t.ProductVariantId, cascadeDelete: true)
-                .Index(t => t.ProductVariantId)
-                .Index(t => t.ProductPropertyId);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Properties", t => t.PropertyId, cascadeDelete: true)
+                .ForeignKey("dbo.Variants", t => t.VariantId, cascadeDelete: true)
+                .Index(t => t.VariantId)
+                .Index(t => t.PropertyId);
             
             CreateTable(
-                "dbo.ProductProperties",
+                "dbo.Properties",
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
@@ -187,39 +187,39 @@ namespace FrancisStore.Data.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.ProductVariants", "ProductId", "dbo.Products");
-            DropForeignKey("dbo.ProductVariantOptions", "ProductVariantId", "dbo.ProductVariants");
-            DropForeignKey("dbo.ProductVariantOptions", "ProductPropertyId", "dbo.ProductProperties");
+            DropForeignKey("dbo.Variants", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.Options", "VariantId", "dbo.Variants");
+            DropForeignKey("dbo.Options", "PropertyId", "dbo.Properties");
             DropForeignKey("dbo.ProductImages", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.ProductImages", "ImageId", "dbo.Images");
             DropForeignKey("dbo.Collects", "ProductId", "dbo.Products");
-            DropForeignKey("dbo.ProductCollections", "ImageId", "dbo.Images");
-            DropForeignKey("dbo.Collects", "ProductCollectionId", "dbo.ProductCollections");
+            DropForeignKey("dbo.Collects", "CollectionId", "dbo.Collections");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.ProductVariantOptions", new[] { "ProductPropertyId" });
-            DropIndex("dbo.ProductVariantOptions", new[] { "ProductVariantId" });
-            DropIndex("dbo.ProductVariants", new[] { "ProductId" });
+            DropIndex("dbo.Options", new[] { "PropertyId" });
+            DropIndex("dbo.Options", new[] { "VariantId" });
+            DropIndex("dbo.Variants", new[] { "ProductId" });
+            DropIndex("dbo.ProductImages", new[] { "ImageId" });
             DropIndex("dbo.ProductImages", new[] { "ProductId" });
-            DropIndex("dbo.ProductCollections", new[] { "ImageId" });
-            DropIndex("dbo.Collects", new[] { "ProductCollectionId" });
+            DropIndex("dbo.Collects", new[] { "CollectionId" });
             DropIndex("dbo.Collects", new[] { "ProductId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.ProductProperties");
-            DropTable("dbo.ProductVariantOptions");
-            DropTable("dbo.ProductVariants");
+            DropTable("dbo.Properties");
+            DropTable("dbo.Options");
+            DropTable("dbo.Variants");
+            DropTable("dbo.Images");
             DropTable("dbo.ProductImages");
             DropTable("dbo.Products");
-            DropTable("dbo.Images");
-            DropTable("dbo.ProductCollections");
             DropTable("dbo.Collects");
+            DropTable("dbo.Collections");
         }
     }
 }

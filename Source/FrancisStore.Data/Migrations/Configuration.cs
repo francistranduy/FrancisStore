@@ -42,32 +42,32 @@ namespace FrancisStore.Data.Migrations
                     context.ProductImages.AddOrUpdate(productImages.ToArray());
             }
 
-            if (!context.ProductProperties.Any())
+            if (!context.Properties.Any())
             {
-                var productProperties = Seeder.ReadFile<Property>(nameof(context.ProductProperties));
+                var productProperties = Seeder.ReadFile<Property>(nameof(context.Properties));
                 if (productProperties != null && productProperties.Any())
-                    context.ProductProperties.AddOrUpdate(productProperties.ToArray());
+                    context.Properties.AddOrUpdate(productProperties.ToArray());
             }
 
-            if (!context.ProductVariants.Any())
+            if (!context.Variants.Any())
             {
-                var productVariants = Seeder.ReadFile<Variant>(nameof(context.ProductVariants));
+                var productVariants = Seeder.ReadFile<Variant>(nameof(context.Variants));
                 if (productVariants != null && productVariants.Any())
-                    context.ProductVariants.AddOrUpdate(productVariants.ToArray());
+                    context.Variants.AddOrUpdate(productVariants.ToArray());
             }
 
-            if (!context.ProductVariantOptions.Any())
+            if (!context.Options.Any())
             {
-                var productVariantOptions = Seeder.ReadFile<Option>(nameof(context.ProductVariantOptions));
+                var productVariantOptions = Seeder.ReadFile<Option>(nameof(context.Options));
                 if (productVariantOptions != null && productVariantOptions.Any())
-                    context.ProductVariantOptions.AddOrUpdate(productVariantOptions.ToArray());
+                    context.Options.AddOrUpdate(productVariantOptions.ToArray());
             }
 
-            if (!context.ProductCollections.Any())
+            if (!context.Collections.Any())
             {
-                var productCollections = Seeder.ReadFile<Collection>(nameof(context.ProductCollections));
+                var productCollections = Seeder.ReadFile<Collection>(nameof(context.Collections));
                 if (productCollections != null && productCollections.Any())
-                    context.ProductCollections.AddOrUpdate(productCollections.ToArray());
+                    context.Collections.AddOrUpdate(productCollections.ToArray());
             }
 
             if (!context.Collects.Any())

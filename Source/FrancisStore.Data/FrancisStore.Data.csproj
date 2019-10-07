@@ -64,25 +64,9 @@
     <Compile Include="Entities\Products\Image.cs" />
     <Compile Include="Entities\Products\ProductImage.cs" />
     <Compile Include="IFrancisStoreDbContext.cs" />
-    <Compile Include="Migrations\201909080848485_AddProductEntities.cs" />
-    <Compile Include="Migrations\201909080848485_AddProductEntities.Designer.cs">
-      <DependentUpon>201909080848485_AddProductEntities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909162121221_AddImageTable.cs" />
-    <Compile Include="Migrations\201909162121221_AddImageTable.Designer.cs">
-      <DependentUpon>201909162121221_AddImageTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909171331558_UpdateImage.cs" />
-    <Compile Include="Migrations\201909171331558_UpdateImage.Designer.cs">
-      <DependentUpon>201909171331558_UpdateImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909231727249_UpdateEntities.cs" />
-    <Compile Include="Migrations\201909231727249_UpdateEntities.Designer.cs">
-      <DependentUpon>201909231727249_UpdateEntities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909232106287_AddIdInToJoinTables.cs" />
-    <Compile Include="Migrations\201909232106287_AddIdInToJoinTables.Designer.cs">
-      <DependentUpon>201909232106287_AddIdInToJoinTables.cs</DependentUpon>
+    <Compile Include="Migrations\201910051521140_Init.cs" />
+    <Compile Include="Migrations\201910051521140_Init.Designer.cs">
+      <DependentUpon>201910051521140_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Entities\Products\Collect.cs" />
@@ -90,14 +74,6 @@
     <Compile Include="FrancisStoreDbContext.cs" />
     <Compile Include="Entities\Products\Property.cs" />
     <Compile Include="Entities\Products\Product.cs" />
-    <Compile Include="Migrations\201908191820036_InitialCreate.cs" />
-    <Compile Include="Migrations\201908191820036_InitialCreate.Designer.cs">
-      <DependentUpon>201908191820036_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908200440082_AddNameForFrancisStoreUser.cs" />
-    <Compile Include="Migrations\201908200440082_AddNameForFrancisStoreUser.Designer.cs">
-      <DependentUpon>201908200440082_AddNameForFrancisStoreUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\Identity\FrancisStoreUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,28 +109,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908191820036_InitialCreate.resx">
-      <DependentUpon>201908191820036_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908200440082_AddNameForFrancisStoreUser.resx">
-      <DependentUpon>201908200440082_AddNameForFrancisStoreUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909080848485_AddProductEntities.resx">
-      <DependentUpon>201909080848485_AddProductEntities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909162121221_AddImageTable.resx">
-      <DependentUpon>201909162121221_AddImageTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909171331558_UpdateImage.resx">
-      <DependentUpon>201909171331558_UpdateImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909231727249_UpdateEntities.resx">
-      <DependentUpon>201909231727249_UpdateEntities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909232106287_AddIdInToJoinTables.resx">
-      <DependentUpon>201909232106287_AddIdInToJoinTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910051521140_Init.resx">
+      <DependentUpon>201910051521140_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

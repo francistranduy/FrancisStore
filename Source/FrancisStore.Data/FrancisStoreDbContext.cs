@@ -36,11 +36,11 @@ namespace FrancisStore.Data
 
         public virtual DbSet<Collect> Collects { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Collection> ProductCollections { get; set; }
+        public virtual DbSet<Collection> Collections { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
-        public virtual DbSet<Property> ProductProperties { get; set; }
-        public virtual DbSet<Variant> ProductVariants { get; set; }
-        public virtual DbSet<Option> ProductVariantOptions { get; set; }
+        public virtual DbSet<Property> Properties { get; set; }
+        public virtual DbSet<Variant> Variants { get; set; }
+        public virtual DbSet<Option> Options { get; set; }
     }
 }
