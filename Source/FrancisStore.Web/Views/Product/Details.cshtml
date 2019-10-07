@@ -29,12 +29,14 @@
 
             <span class="m-text17" id="product-price">Not available</span>
 
-            <p class="s-text8 p-t-10">
-                @Model.Note
-            </p>
+            @if (string.IsNullOrEmpty(Model.Note))
+            {
+                <p class="s-text8 p-t-10">
+                    @Model.Note
+                </p>
+            }
 
             @Html.Hidden("Id")
-
             <!-- Basic Information -->
             <div class="p-t-33 p-b-60">
 
@@ -89,33 +91,35 @@
             </div>
 
             <!-- Description -->
-            <div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
-                <h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
-                    Description
-                    <i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
-                    <i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
-                </h5>
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
+                    <h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+                        Description
+                        <i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
+                        <i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+                    </h5>
 
-                <div class="dropdown-content dis-none p-t-15 p-b-23">
-                    <p class="s-text8">
-                        @Model.Description
-                    </p>
+                    <div class="dropdown-content dis-none s-text8 p-t-15 p-b-23">
+                        @Html.Raw(Model.Description)
+                    </div>
                 </div>
-            </div>
+            }
 
-            <div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
-                <h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
-                    Additional information
-                    <i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
-                    <i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
-                </h5>
+            @if (!string.IsNullOrEmpty(Model.AdditionalInformation))
+            {
+                <div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
+                    <h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+                        Additional information
+                        <i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
+                        <i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+                    </h5>
 
-                <div class="dropdown-content dis-none p-t-15 p-b-23">
-                    <p class="s-text8">
-                        @Model.AdditionalInformation
-                    </p>
+                    <div class="dropdown-content s-text8 dis-none p-t-15 p-b-23">
+                        @Html.Raw(Model.AdditionalInformation)
+                    </div>
                 </div>
-            </div>
+            }
 
             <div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
                 <h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
@@ -195,7 +199,6 @@
                     contentType: "application/json; charset=utf-8",
                     complete: function (jqXHR, textStatus) {
                         if (jqXHR.status == 200) {
-
                             if (jqXHR.responseText && jqXHR.responseText.length > 0) {
                                 var variant = JSON.parse(jqXHR.responseText);
                                 $("#btn-addcart").removeAttr("disabled");
@@ -204,7 +207,6 @@
                                 $("#btn-addcart").addClass("bg1");
                                 $("#variant-sku").html(variant.SKU);
                                 $("#product-price").html("$" + variant.Price);
-                                alert(jqXHR.responseText);
                             }
                             return;
                         }

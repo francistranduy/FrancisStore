@@ -28,14 +28,13 @@ namespace FrancisStore.Service.Products.Services
             }
         }
 
-        public async Task<IList<Collection>> GetCollectionsAsync(string searchString = null, int page = 1, int pageSize = 3)
+        public async Task<IList<Collection>> GetCollectionsAsync(string searchString = null, int page = 1, int pageSize = 12)
         {
             var collections = SearchCollectionsByName(UnitOfWork.CollectionRepository.GetAll(), searchString).OrderBy(p => p.Name).Skip((page - 1) * pageSize).Take(pageSize);
-            return await collections.Select(p => new Collection
+            return await collections.OrderBy(c => c.Id).Select(p => new Collection
             {
                 Id = p.Id,
                 Name = p.Name,
-                Image = p.Image.Source
             }).ToListAsync();
         }
 

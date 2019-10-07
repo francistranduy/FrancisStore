@@ -30,7 +30,7 @@ namespace FrancisStore.Service.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IList<Product>> GetPagedProductListAsync(string searchString = null, int page = 1, int pageSize = 12)
+        public async Task<IList<Product>> GetPagedProductListAsync(string searchString = null, int page = 1, int pageSize = 50)
         {
             var products = UnitOfWork.ProductRepository.GetAll();
             if (!string.IsNullOrEmpty(searchString))
@@ -54,7 +54,7 @@ namespace FrancisStore.Service.Services
             return await products.CountAsync();
         }
 
-        public async Task<IList<Product>> GetPagedProductListByCollectionIdAsync(long id, string searchString = null, int page = 1, int pageSize = 12)
+        public async Task<IList<Product>> GetPagedProductListByCollectionIdAsync(long id, string searchString = null, int page = 1, int pageSize = 50)
         {
             var collects = UnitOfWork.CollectRepository.GetAll().Where(c => c.CollectionId == id);
             if (!string.IsNullOrEmpty(searchString))

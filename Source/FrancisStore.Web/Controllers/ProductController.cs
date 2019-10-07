@@ -39,7 +39,7 @@ namespace FrancisStore.Web.Controllers
             _collectionService = collectionService;
         }
 
-        public async Task<ActionResult> Index(long? Id, string searchString, int page = 1, int pageSize = 12)
+        public async Task<ActionResult> Index(long? Id, string searchString, int page = 1, int pageSize = 9)
         {
             var products = default(IList<Product>);
             int num = 0;
@@ -55,11 +55,10 @@ namespace FrancisStore.Web.Controllers
                 num = await ProductService.CountAsync(searchString);
             }
 
-            var collections = await CollectionService.GetCollectionsAsync();
+            var collections = await CollectionService.GetCollectionsAsync(pageSize: 6);
             var collectionsVM = collections.Select(c => new CollectionViewModel
             {
                 Id = c.Id,
-                Image = c.Image,
                 Name = c.Name
             }).ToList();
 
@@ -102,7 +101,7 @@ namespace FrancisStore.Web.Controllers
                         Tags = product.Tags,
                         Description = product.Description,
                         AdditionalInformation = product.AdditionalInformation,
-                        Images = product.Images,
+                        Images = product.Images.Take(4).ToList(),
                         Properties = product.Options.Keys.ToList(),
                         Options = product.Options,
                         RelatedProduct = product.RelatedProduct?.Select(r => new ProductViewModel

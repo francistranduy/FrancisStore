@@ -9,6 +9,6 @@ namespace FrancisStore.Service.Products.Interfaces
 {
     public interface ICollectionService
     {
-        Task<IList<Collection>> GetCollectionsAsync(string searchString = null, int page = 1, int pageSize = 3);
+        Task<IList<Collection>> GetCollectionsAsync(string searchString = null, int page = 1, int pageSize = 5);
     }
 }
