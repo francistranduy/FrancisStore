@@ -13,6 +13,7 @@ namespace FrancisStore.Repository.UnitOfWorks
         IGenericRepository<FrancisStore.Data.Entities.Products.Product> ProductRepository { get; }
         IGenericRepository<FrancisStore.Data.Entities.Products.Collection> CollectionRepository { get; }
         IGenericRepository<FrancisStore.Data.Entities.Products.Collect> CollectRepository { get; }
+        IGenericRepository<FrancisStore.Data.Entities.Shopping.Item> ItemRepository { get; }
         void Save();
         Task SaveAsync();
     }

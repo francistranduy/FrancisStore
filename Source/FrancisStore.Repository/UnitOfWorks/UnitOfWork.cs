@@ -1,5 +1,6 @@
 ﻿using FrancisStore.Data;
 using FrancisStore.Data.Entities.Products;
+using FrancisStore.Data.Entities.Shopping;
 using FrancisStore.Repository.Bases;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,15 @@ namespace FrancisStore.Repository.UnitOfWorks
         private readonly IGenericRepository<Product> _productRepository;
         private readonly IGenericRepository<Collection> _collectionRepository;
         private readonly IGenericRepository<Collect> _collectRepository;
+        private readonly IGenericRepository<Item> _itemRepository;
 
-        public UnitOfWork(IFrancisStoreDbContext context, IGenericRepository<Product> productRepository, IGenericRepository<Collection> collectionRepository, IGenericRepository<Collect> collectRepository)
+        public UnitOfWork(IFrancisStoreDbContext context, IGenericRepository<Product> productRepository, IGenericRepository<Collection> collectionRepository, IGenericRepository<Collect> collectRepository, IGenericRepository<Item> itemRepository)
         {
             _context = context;
             _productRepository = productRepository;
             _collectionRepository = collectionRepository;
             _collectRepository = collectRepository;
+            _itemRepository = itemRepository;
         }
 
         protected IFrancisStoreDbContext DbContext
@@ -53,6 +56,13 @@ namespace FrancisStore.Repository.UnitOfWorks
             get
             {
                 return _collectRepository;
+            }
+        }
+        public IGenericRepository<Item> ItemRepository
+        {
+            get
+            {
+                return _itemRepository;
             }
         }
 
