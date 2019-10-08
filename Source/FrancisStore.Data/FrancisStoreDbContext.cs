@@ -2,6 +2,7 @@ namespace FrancisStore.Data
 {
     using FrancisStore.Data.Entities.Identity;
     using FrancisStore.Data.Entities.Products;
+    using FrancisStore.Data.Entities.Shopping;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
@@ -42,5 +43,6 @@ namespace FrancisStore.Data
         public virtual DbSet<Property> Properties { get; set; }
         public virtual DbSet<Variant> Variants { get; set; }
         public virtual DbSet<Option> Options { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
     }
 }

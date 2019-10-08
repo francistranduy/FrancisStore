@@ -63,6 +63,7 @@
     <Compile Include="Entities\Bases\BaseEntity.cs" />
     <Compile Include="Entities\Products\Image.cs" />
     <Compile Include="Entities\Products\ProductImage.cs" />
+    <Compile Include="Entities\Shopping\Item.cs" />
     <Compile Include="IFrancisStoreDbContext.cs" />
     <Compile Include="Migrations\201910051521140_Init.cs" />
     <Compile Include="Migrations\201910051521140_Init.Designer.cs">
@@ -113,5 +114,6 @@
       <DependentUpon>201910051521140_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
