@@ -61,6 +61,9 @@
     <Compile Include="Products\Interfaces\IProductService.cs" />
     <Compile Include="Products\Services\CollectionService.cs" />
     <Compile Include="Products\Services\ProductService.cs" />
+    <Compile Include="Shopping\Interfaces\IShoppingCartService.cs" />
+    <Compile Include="Shopping\Models\Item.cs" />
+    <Compile Include="Shopping\Services\ShoppingCartService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -76,5 +79,6 @@
       <Name>FrancisStore.Repository</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
