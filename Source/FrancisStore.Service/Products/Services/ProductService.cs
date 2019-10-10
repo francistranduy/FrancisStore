@@ -136,16 +136,19 @@ namespace FrancisStore.Service.Services
                     return default;
             }
 
+            //Get first variant if there are many variants which meet requirement
+            var variant = variants.FirstOrDefault();
+
             //Return variant which meet requirement
-            return variants.Select(v => new Variant
+            return new Variant
             {
-                Id = v.Id,
-                Title = v.Title,
-                Price = v.Price,
-                SKU = v.SKU,
-                Position = v.Position,
-                Options = v.Options.ToDictionary(o => o.Property.Name, o => o.Value)
-            }).FirstOrDefault();
+                Id = variant.Id,
+                Title = variant.Title,
+                Price = variant.Price,
+                SKU = variant.SKU,
+                Position = variant.Position,
+                Options = variant.Options.ToDictionary(o => o.Property.Name, o => o.Value)
+            };
         }
 
         private IList<Product> GetRelatedProducts(Entities.Product product)
