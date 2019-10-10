@@ -64,23 +64,26 @@
 
                 <div class="flex-r-m flex-w p-t-10">
                     <div class="w-size16 flex-m flex-w">
-                        <div class="flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
-                            <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-                                <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-                            </button>
+                        @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post, new { @class = "form-horizontal", id = "form-addcart", role = "form" }))
+                        {
+                            <div class="flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
+                                <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
+                                    <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
+                                </button>
 
-                            <input class="size8 m-text18 t-center num-product" type="number" name="Quantity" value="1">
+                                <input class="size8 m-text18 t-center num-product" type="number" name="Quantity" value="1">
 
-                            <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-                                <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                        </div>
+                                <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+                                    <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
 
-                        <input type="hidden" name="Variant" id="variant-id">
-                        <div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
-                            <!-- Button -->
-                            <input type="button" class="flex-c-m sizefull bg8 bo-rad-23 hov1 s-text1 trans-0-4" id="btn-addcart" disabled value="Add to Cart" />
-                        </div>
+                            <input type="hidden" name="VariantId" id="variant-id">
+                            <div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
+                                <!-- Button -->
+                                <input type="button" class="flex-c-m sizefull bg8 bo-rad-23 hov1 s-text1 trans-0-4" id="btn-addcart" disabled value="Add to Cart" />
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -162,10 +165,26 @@
         });
 
         //Add to card modal
-        $('.block2-btn-addcart').each(function () {
-            var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-            $(this).on('click', function () {
-                swal(nameProduct, "is added to cart !", "success");
+        $("#btn-addcart").on('click', function () {
+            var data = $("#form-addcart").serializeObject();
+            var url = $("#form-addcart").attr("action");
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                complete: function (jqXHR, textStatus) {
+                    if (jqXHR.status == 200) {
+                        swal(nameProduct, "is added to cart !", "success");
+                        return;
+                    }
+
+                    if (jqXHR.status == 404) {
+                        swal(nameProduct, "An error occurred!", "success");
+                    }
+
+                    console.log("An error occurred!");
+                }
             });
         });
 

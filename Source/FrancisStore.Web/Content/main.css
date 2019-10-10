@@ -2272,16 +2272,20 @@ li.active-item > a {
     }
 
     .table-shopping-cart .column-3 {
-        width: 133px;
+        width: 330px;
         padding-right: 30px;
     }
 
     .table-shopping-cart .column-4 {
-        width: 355px;
         padding-right: 30px;
     }
 
     .table-shopping-cart .column-5 {
+        width: 355px;
+        padding-right: 30px;
+    }
+
+    .table-shopping-cart .column-6 {
         padding-right: 30px;
     }
 
