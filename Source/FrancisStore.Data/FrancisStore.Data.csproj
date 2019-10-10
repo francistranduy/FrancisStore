@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201910051521140_Init.Designer.cs">
       <DependentUpon>201910051521140_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910090018223_AddItemEntity.cs" />
+    <Compile Include="Migrations\201910090018223_AddItemEntity.Designer.cs">
+      <DependentUpon>201910090018223_AddItemEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Entities\Products\Collect.cs" />
     <Compile Include="Entities\Products\Collection.cs" />
@@ -112,6 +116,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910051521140_Init.resx">
       <DependentUpon>201910051521140_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910090018223_AddItemEntity.resx">
+      <DependentUpon>201910090018223_AddItemEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
