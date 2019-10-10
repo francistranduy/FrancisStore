@@ -20,6 +20,7 @@ namespace FrancisStore.Data.Entities.Identity
             // Add custom user claims here
             userIdentity.AddClaim(new Claim(ClaimTypes.Surname, this.LastName));
             userIdentity.AddClaim(new Claim(ClaimTypes.GivenName, this.FirstName));
+            userIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, this.Id));
             return userIdentity;
         }
 
