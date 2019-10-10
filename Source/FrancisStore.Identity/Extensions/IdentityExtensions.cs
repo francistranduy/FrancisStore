@@ -51,5 +51,25 @@ namespace FrancisStore.Identity
             }
             return null;
         }
+        
+        /// <summary>
+        ///     Return the user last name using the SurnameClaimsType
+        /// </summary>
+        /// <param name="identity"></param>
+        /// <returns></returns>
+        public static string GetUserId(this IIdentity identity)
+        {
+            if (identity == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var ci = identity as ClaimsIdentity;
+            if (ci != null)
+            {
+                return ci.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            }
+            return null;
+        }
     }
 }
