@@ -48,6 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
@@ -171,6 +177,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Extensions\IdentityExtensions.cs" />
+    <Compile Include="FrancisStoreIdentityModule.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ProfileViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -282,6 +289,10 @@
     <ProjectReference Include="..\FrancisStore.Data\FrancisStore.Data.csproj">
       <Project>{3faeb671-0bef-48a5-865e-8f32f06cac12}</Project>
       <Name>FrancisStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrancisStore.Service\FrancisStore.Service.csproj">
+      <Project>{1e010237-5a4f-4502-b7f2-981e4d15324d}</Project>
+      <Name>FrancisStore.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
