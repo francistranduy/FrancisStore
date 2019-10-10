@@ -17,14 +17,16 @@ namespace FrancisStore.Repository.UnitOfWorks
         private readonly IGenericRepository<Collection> _collectionRepository;
         private readonly IGenericRepository<Collect> _collectRepository;
         private readonly IGenericRepository<Item> _itemRepository;
+        private readonly IGenericRepository<Variant> _variantRepository;
 
-        public UnitOfWork(IFrancisStoreDbContext context, IGenericRepository<Product> productRepository, IGenericRepository<Collection> collectionRepository, IGenericRepository<Collect> collectRepository, IGenericRepository<Item> itemRepository)
+        public UnitOfWork(IFrancisStoreDbContext context, IGenericRepository<Product> productRepository, IGenericRepository<Collection> collectionRepository, IGenericRepository<Collect> collectRepository, IGenericRepository<Item> itemRepository, IGenericRepository<Variant> variantRepository)
         {
             _context = context;
             _productRepository = productRepository;
             _collectionRepository = collectionRepository;
             _collectRepository = collectRepository;
             _itemRepository = itemRepository;
+            _variantRepository = variantRepository;
         }
 
         protected IFrancisStoreDbContext DbContext
@@ -63,6 +65,14 @@ namespace FrancisStore.Repository.UnitOfWorks
             get
             {
                 return _itemRepository;
+            }
+        }
+
+        public IGenericRepository<Variant> VariantRepository
+        {
+            get
+            {
+                return _variantRepository;
             }
         }
 
