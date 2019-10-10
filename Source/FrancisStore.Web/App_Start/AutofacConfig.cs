@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using FrancisStore.Identity;
 using FrancisStore.Repository;
 using FrancisStore.Service;
 using System;
@@ -28,6 +29,7 @@ namespace FrancisStore.Web
             // Register our Data dependencies
             builder.RegisterModule(new FrancisStoreServiceModule());
             builder.RegisterModule(new FrancisStoreRepositoryModule());
+            builder.RegisterModule(new FrancisStoreIdentityModule());
 
             var container = builder.Build();
 

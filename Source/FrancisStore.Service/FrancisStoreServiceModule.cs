@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using FrancisStore.Service.Shopping.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,11 @@ namespace FrancisStore.Service
 
         protected override void Load(ContainerBuilder builder)
         {
-            //Register the type-mapping, it configures which class end with "Repository" to instantiate for which interface implemented by itself.
+            //Register the type-mapping, it configures which class end with "Service" to instantiate for which interface implemented by itself.
             builder.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly())
                 .Where(type => type.Name.EndsWith("Service"))
-                .AsImplementedInterfaces();
+                .AsImplementedInterfaces()
+                .InstancePerRequest();
             base.Load(builder);
         }
     }
