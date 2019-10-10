@@ -14,12 +14,10 @@ namespace FrancisStore.Service.Shopping.Services
     public class ShoppingCartService : IShoppingCartService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly Guid _id;
-
-        public ShoppingCartService(IUnitOfWork unitOfWork, Guid id)
+        private const string _sessionKey = "CartId";
+        public ShoppingCartService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _id = id;
         }
 
         protected IUnitOfWork UnitOfWork
@@ -30,26 +28,21 @@ namespace FrancisStore.Service.Shopping.Services
             }
         }
 
-        protected Guid Id
+        public async Task AddToCart(Guid id, long variantId, int count = 1)
         {
-            get
-            {
-                return _id;
-            }
-        }
+            var variant = await UnitOfWork.VariantRepository.GetById(variantId);
+            if (variant is null)
+                return;
 
-        public async Task AddToCart(Variant variant)
-        {
-            var item = await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == Id && i.VariantId == variant.Id).FirstOrDefaultAsync();
-
+            var item = await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id && i.VariantId == variant.Id).FirstOrDefaultAsync();
             if (item is null)
             {
                 //Create new item if there is no item in cart
                 UnitOfWork.ItemRepository.Insert(new FrancisStore.Data.Entities.Shopping.Item
                 {
                     VariantId = variant.Id,
-                    ShoppingCartId = Id,
-                    Count = 1,
+                    ShoppingCartId = id,
+                    Count = count,
                     DateCreated = DateTime.Now
                 });
             }
@@ -57,16 +50,16 @@ namespace FrancisStore.Service.Shopping.Services
             {
                 // If the item does exist in the cart, 
                 // then add one to the quantity
-                item.Count++;
+                item.Count+= count;
             }
 
             await UnitOfWork.SaveAsync();
             return;
         }
 
-        public async Task<int> RemoveItem(long itemId)
+        public async Task<int> RemoveItem(Guid id, long itemId)
         {
-            var item = await UnitOfWork.ItemRepository.GetAll().Where(i => i.Id == itemId && i.ShoppingCartId == Id).FirstOrDefaultAsync();
+            var item = await UnitOfWork.ItemRepository.GetAll().Where(i => i.Id == itemId && i.ShoppingCartId == id).FirstOrDefaultAsync();
 
             if (item is null || item.Count < 1)
                 return default;
@@ -79,9 +72,9 @@ namespace FrancisStore.Service.Shopping.Services
             return item.Count;
         }
 
-        public async Task Clear()
+        public async Task Clear(Guid id)
         {
-            var items = UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == Id);
+            var items = UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id);
 
             foreach(var item in items)
             {
@@ -91,31 +84,35 @@ namespace FrancisStore.Service.Shopping.Services
             return;
         }
 
-        public async Task<int> GetCount()
+        public async Task<int> GetCount(Guid id)
         {
-            return await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == Id).Select(i => i.Count).SumAsync();
+            return await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id).Select(i => i.Count).SumAsync();
         }
 
-        public async Task<IList<Item>> GetItems()
+        public async Task<IList<Item>> GetItems(Guid id)
         {
-            return await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == Id).Select(i => new Item
+            var items = await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id).ToListAsync();
+                
+            return items.Select(i => new Item
             {
                 Id = i.Id,
+                Image = i.Variant.Product.Images.FirstOrDefault().Image.Source,
                 Name = i.Variant.Title,
-                Properties = i.Variant.Options.ToDictionary(o => o.Property.Name, o => o.Value),
+                Options = i.Variant.Options.ToDictionary(o => o.Property.Name, o => o.Value),
+                Price = i.Variant.Price,
                 Count = i.Count,
                 DateCreated = i.DateCreated
-            }).ToListAsync();
+            }).ToList();
         }
 
-        public async Task<double> GetTotalCost()
+        public async Task<double> GetTotalCost(Guid id)
         {
-            return await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == Id).Select(i => i.Variant.Price * i.Count).SumAsync();
+            return await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id).Select(i => i.Variant.Price * i.Count).SumAsync();
         }
 
-        public async Task MigrateCart(Guid id)
+        public async Task MigrateShoppingCart(Guid id, Guid userId)
         {
-            var items = UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == Id);
+            var items = UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id);
 
             foreach (var item in items)
             {
@@ -123,6 +120,14 @@ namespace FrancisStore.Service.Shopping.Services
             }
             await UnitOfWork.SaveAsync();
             return;
+        }
+
+        public string SessionKey
+        {
+            get
+            {
+                return _sessionKey;
+            }
         }
     }
 }
