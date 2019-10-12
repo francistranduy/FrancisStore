@@ -16,5 +16,7 @@ namespace FrancisStore.Web.Models
         public string Image { get; set; }
         [Required]
         public double Price { get; set; }
+        [Required]
+        public long VariantId { get; set; }
     }
 }

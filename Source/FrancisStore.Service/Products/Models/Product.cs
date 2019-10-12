@@ -12,5 +12,6 @@ namespace FrancisStore.Service.Products.Models
         public string Name { get; set; }
         public string Image { get; set; }
         public double Price { get; set; }
+        public long DefaultVariant { get; set; }
     }
 }

@@ -41,7 +41,8 @@ namespace FrancisStore.Service.Services
                 Id = p.Id,
                 Name = p.Name,
                 Image = p.Images.FirstOrDefault().Image.Source,
-                Price = p.Variants.Any() ? p.Variants.FirstOrDefault().Price : default
+                Price = p.Variants.Any() ? p.Variants.FirstOrDefault().Price : default,
+                DefaultVariant = p.Variants.Any() ? p.Variants.FirstOrDefault().Id : default
             }).ToListAsync();
         }
 

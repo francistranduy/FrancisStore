@@ -77,7 +77,8 @@ namespace FrancisStore.Web.Controllers
                 Id = p.Id,
                 Name = p.Name,
                 Image = p.Image,
-                Price = p.Price
+                Price = p.Price,
+                VariantId = p.DefaultVariant,
             });
 
             if (RouteData.Values.ContainsKey("Id"))
