@@ -64,17 +64,40 @@ namespace FrancisStore.Web.Controllers
 
         public async Task<ActionResult> AddToCart(long variantId, int quantity = 1)
         {
-            if (Request.IsAjaxRequest())
-            {
-                await ShoppingCartService.AddToCart(ShoppingCartId, variantId, quantity);
-            }
+            if (!Request.IsAjaxRequest())
+                return HttpNotFound();
 
+            await ShoppingCartService.AddToCart(ShoppingCartId, variantId, quantity);
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
-        public ActionResult CartNotification()
+        public async Task<ActionResult> Clear()
         {
-            return PartialView("_CartNotification");
+            if (!Request.IsAjaxRequest())
+                return HttpNotFound();
+
+            await ShoppingCartService.Clear(ShoppingCartId);
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [ChildActionOnly]
+        public ActionResult Notification()
+        {
+            var items = Task.Run(() => ShoppingCartService.GetItems(this.ShoppingCartId)).Result;
+            return PartialView("_Notification", new ItemListViewModel
+            {
+                Items = items.Select(i => new ItemViewModel
+                {
+                    Id = i.Id,
+                    Name = i.Name,
+                    Image = i.Image,
+                    Options = i.Options.Select(o => string.Concat(o.Key.ToUpper(), ": ", o.Value)).Aggregate(string.Empty, (accumulate, next) => (accumulate == string.Empty ? accumulate : accumulate + ", ") + next),
+                    Price = i.Price,
+                    Count = i.Count,
+                    Total = i.Count * i.Price
+                }),
+                Subtatol = items.Select(i => i.Price * i.Count).Sum()
+            });
         }
     }
 }

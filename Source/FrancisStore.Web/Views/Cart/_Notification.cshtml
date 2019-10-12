@@ -1,0 +1,58 @@
+﻿@model FrancisStore.Web.Models.ItemListViewModel
+<div class="header-wrapicon1 dis-block m-l-30">
+    <img src="~/Images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+    <span class="header-icons-noti">@Model.Items.Count()</span>
+
+    <!-- Header cart noti -->
+    <div class="header-cart header-dropdown">
+        @if (Model.Items.Any())
+        {
+            <ul class="header-cart-wrapitem">
+                @foreach (var item in Model.Items)
+                {
+                    <li class="header-cart-item">
+                        <div class="header-cart-item-img">
+                            <img src="@item.Image" alt="IMG">
+                        </div>
+
+                        <div class="header-cart-item-txt">
+                            <a href="#" class="header-cart-item-name">
+                                @item.Name
+                            </a>
+
+                            <span class="header-cart-item-info">
+                                @item.Count x $@item.Price
+                            </span>
+                        </div>
+                    </li>
+                }
+            </ul>
+
+            <div class="header-cart-total">
+                Total: $@Model.Subtatol
+            </div>
+        }
+        else
+        {
+            <div class="header-user-info p-b-32">
+                <div class="header-user-noti">
+                    <p class="m-text26 t-center">
+                        Cart is empty!
+                    </p>
+                </div>
+            </div>
+        }
+
+        <div class="header-cart-buttons">
+            <div class="header-cart-wrapbtn">
+                <!-- Button -->
+                @Html.ActionLink("View Cart", "Index", "Cart", null, new { @class = "flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" })
+            </div>
+
+            <div class="header-cart-wrapbtn">
+                <!-- Button -->
+                @Html.ActionLink("Check out", "Index", "Checkout", null, new { @class = "flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" })
+            </div>
+        </div>
+    </div>
+</div>
