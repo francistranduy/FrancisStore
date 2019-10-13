@@ -116,7 +116,7 @@ namespace FrancisStore.Service.Shopping.Services
 
             foreach (var item in items)
             {
-                item.ShoppingCartId = id;
+                item.ShoppingCartId = userId;
             }
             await UnitOfWork.SaveAsync();
             return;

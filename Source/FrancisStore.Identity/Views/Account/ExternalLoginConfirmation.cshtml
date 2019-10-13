@@ -3,34 +3,56 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_ContentLayout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>Associate your @ViewBag.LoginProvider account.</h3>
 
-@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
+<div class="col-md-8">
 
-    <h4>Association Form</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <p class="text-info">
-        You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
-        Please enter a user name for this site below and click the Register button to finish
-        logging in.
-    </p>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <h4 class="m-text26 t-center">Associate your @ViewBag.LoginProvider account.</h4>
+        <hr />
+
+        <p class="text-info">
+            You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
+            Please enter a user name for this site below and click the Register button to finish
+            logging in.
+        </p>
+        <hr />
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger s-text3 m-b-20" })
+        <div class="form-row">
+            <div class="form-group m-b-20 col-md-12">
+                <div class="bo4 of-hidden size15">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.Email) })
+                </div>
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger s-text23" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+        <div class="form-row">
+            <div class="form-group m-b-20 col-md-6">
+                <div class="bo4 of-hidden size15">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.FirstName) })
+                </div>
+                @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger s-text23" })
+            </div>
+            <div class="form-group m-b-20 col-md-6">
+                <div class="bo4 of-hidden size15">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.LastName) })
+                </div>
+                @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger s-text23" })
+            </div>
         </div>
-    </div>
-}
+        <div class="form-row">
+            <div class="form-group float-right col-md-4">
+                <div class="col-md-12">
+                    <input type="submit" class="flex-c-m size2 bg11 bo-rad-20 hov1 s-text1 trans-0-4" value="Register" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

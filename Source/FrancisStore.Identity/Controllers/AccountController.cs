@@ -79,7 +79,7 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
@@ -93,7 +93,7 @@ namespace FrancisStore.Identity.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    UpdateShoppingCart();
+                    await UpdateShoppingCart();
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -123,7 +123,7 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model)
         {
             if (!ModelState.IsValid)
@@ -161,22 +161,22 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new FrancisStoreUser { UserName = model.Email, Email = model.Email };
+                var user = new FrancisStoreUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    //Send an email with this link
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -212,7 +212,7 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
             if (ModelState.IsValid)
@@ -256,7 +256,7 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
@@ -290,7 +290,7 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider
@@ -316,7 +316,7 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/SendCode
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> SendCode(SendCodeViewModel model)
         {
             if (!ModelState.IsValid)
@@ -348,6 +348,7 @@ namespace FrancisStore.Identity.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    await UpdateShoppingCart();
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -358,7 +359,12 @@ namespace FrancisStore.Identity.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel
+                    {
+                        Email = loginInfo.Email,
+                        FirstName = loginInfo.ExternalIdentity.FindFirstValue("first_name"),
+                        LastName = loginInfo.ExternalIdentity.FindFirstValue("last_name")
+            });
             }
         }
 
@@ -366,7 +372,7 @@ namespace FrancisStore.Identity.Controllers
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
         {
             if (User.Identity.IsAuthenticated)
@@ -382,13 +388,14 @@ namespace FrancisStore.Identity.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new FrancisStoreUser { UserName = model.Email, Email = model.Email };
+                var user = new FrancisStoreUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+                        await UpdateShoppingCart();
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
@@ -403,10 +410,11 @@ namespace FrancisStore.Identity.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.Abandon();
             return RedirectToAction("Index", "Home");
         }
 
@@ -467,13 +475,13 @@ namespace FrancisStore.Identity.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private void UpdateShoppingCart()
+        private async Task UpdateShoppingCart()
         {
-            if (Guid.TryParse(Session[ShoppingCartService.SessionKey] as string, out var id) && 
-                User.Identity.IsAuthenticated && 
-                Guid.TryParse(User.Identity.GetUserId(), out var userId))
+            if (Guid.TryParse(Session[ShoppingCartService.SessionKey]?.ToString(), out var id) &&
+                AuthenticationManager.AuthenticationResponseGrant.Identity.IsAuthenticated && 
+                Guid.TryParse(AuthenticationManager.AuthenticationResponseGrant.Identity.GetUserId(), out var userId))
             {
-                ShoppingCartService.MigrateShoppingCart(id, userId);
+                await ShoppingCartService.MigrateShoppingCart(id, userId);
             }
         }
 

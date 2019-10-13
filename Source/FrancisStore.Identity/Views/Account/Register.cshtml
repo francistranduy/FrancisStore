@@ -4,39 +4,61 @@
     Layout = "~/Views/Shared/_ContentLayout.cshtml";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <div class="col-md-6 m-auto">
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            //@Html.AntiForgeryToken()
+            <h4 class="m-text26 text-center m-b-20">Create a new account</h4>
+            <hr />
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+            <p class="text-info m-b-20 text-left">
+                To create an account for this site, you must provide email, first name, last name and password information.
+            </p>
+            <div class="form-group m-b-20">
+                @Html.ValidationSummary("", new { @class = "text-danger s-text23 m-auto text-center" })
+            </div>
+            <div class="form-group m-b-20">
+                <div class="bo4 of-hidden size15">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.Email) })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger s-text23" })
+                </div>
+            </div>
+            <div class="form-group m-b-20 row mx-0">
+                <div class="bo4 of-hidden size15 col-md-6 col">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.FirstName) })
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger s-text23" })
+                </div>
+                <div class="bo4 of-hidden size15 col-md-6 col">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.LastName) })
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger s-text23" })
+                </div>
+            </div>
+            <div class="form-group m-b-20">
+                <div class="bo4 of-hidden size15 col-md-8">
+                    @Html.PasswordFor(m => m.Password, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.Password) })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger s-text23" })
+                </div>
+            </div>
+            <div class="form-group m-b-20">
+                <div class="bo4 of-hidden size15 col-md-8">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "sizefull s-text3 p-l-22 p-r-22", @placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger s-text23" })
+                </div>
+            </div>
+
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-4 m-auto">
+                    <input type="submit" class="flex-c-m size2 bg11 bo-rad-20 hov1 s-text1 trans-0-4" value="Register" />
+                </div>
+            </div>
+        }
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+
+    </div>
+</div>
