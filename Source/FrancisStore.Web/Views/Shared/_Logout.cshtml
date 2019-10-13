@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNet.Identity
+@using FrancisStore.Identity
+
+@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "form-logout" }))
+    {
+        //@Html.AntiForgeryToken()
+    }
+}

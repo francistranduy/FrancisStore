@@ -28,12 +28,14 @@
 
 <body class="animsition">
 
+    <!-- Logout form -->
+    @{Html.RenderPartial("_Logout");}
     <!-- Header fixed -->
     @{Html.RenderPartial("_HeaderFixed");}
     <!-- Top Notification -->
     @{Html.RenderPartial("_TopNotification");}
     <!-- Header -->
-    @{Html.RenderPartial("_Header", User.Identity as FrancisStoreUser);}
+    @{Html.RenderPartial("_Header");}
     @RenderBody()
     <!-- Footer -->
     @{Html.RenderPartial("_Footer");}

@@ -40,67 +40,7 @@
                     <img src="~/Images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 
                     <!-- Header user info -->
-                    <div class="header-user header-dropdown">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <div class="header-user-info p-b-32">
-                                <div class="header-user-info-img hov-img-zoom">
-                                    <img src="~/Images/user-header-01.jpg" alt="IMG">
-                                </div>
-
-                                <div class="header-user-info-txt">
-                                    <a href="#" class="header-user-info-name">
-                                        @User.Identity.GetUserFirstName() @User.Identity.GetUserLastName()
-                                    </a>
-
-                                    <span class="header-user-email">
-                                        @User.Identity.GetUserName()
-                                    </span>
-                                </div>
-                            </div>
-
-                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                            {
-                                @Html.AntiForgeryToken()
-                            }
-
-                            <div class="header-user-buttons">
-                                <div class="header-user-wrapbtn">
-                                    <!-- Button -->
-                                    @Html.ActionLink("Profile", "Index", "Profile", routeValues: null, htmlAttributes: new { @class = "flex-c-m size1 bg10 bo-rad-20 hov1 s-text1 trans-0-4" })
-                                </div>
-
-                                <div class="header-user-wrapbtn">
-                                    <!-- Button -->
-                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="flex-c-m size1 bg12 bo-rad-20 hov1 s-text1 trans-0-4">
-                                        Logout
-                                    </a>
-                                </div>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="header-user-info p-b-32">
-                                <div class="header-user-noti">
-                                    <p class="m-text26 t-center">
-                                        You are not logged in!
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="header-user-buttons">
-                                <div class="header-user-wrapbtn">
-                                    <!-- Button -->
-                                    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "flex-c-m size1 bg10 bo-rad-20 hov1 s-text1 trans-0-4" })
-                                </div>
-
-                                <div class="header-user-wrapbtn">
-                                    <!-- Button -->
-                                    @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "flex-c-m size1 bg11 bo-rad-20 hov1 s-text1 trans-0-4" })
-                                </div>
-                            </div>
-                        }
-                    </div>
+                    @{Html.RenderPartial("_HeaderUserInfo");}
                 </div>
             </div>
 
