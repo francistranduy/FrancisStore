@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -17,10 +18,10 @@ namespace FrancisStore.Identity
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            var client = new SmtpClient("smtp.gmail.com");
+            await client.SendMailAsync("ueemailer@gmail.com", message.Destination, message.Subject, message.Body);
         }
     }
 
@@ -41,7 +42,7 @@ namespace FrancisStore.Identity
         {
         }
 
-        public static FrancisStoreUserManager Create(IdentityFactoryOptions<FrancisStoreUserManager> options, IOwinContext context) 
+        public static FrancisStoreUserManager Create(IdentityFactoryOptions<FrancisStoreUserManager> options, IOwinContext context)
         {
             var manager = new FrancisStoreUserManager(new UserStore<FrancisStoreUser>(context.Get<FrancisStoreDbContext>()));
             // Configure validation logic for usernames
@@ -82,7 +83,7 @@ namespace FrancisStore.Identity
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<FrancisStoreUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
