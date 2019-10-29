@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Checkout\Interfaces\ICheckoutService.cs" />
+    <Compile Include="Checkout\Models\Order.cs" />
+    <Compile Include="Checkout\Services\CheckoutService.cs" />
     <Compile Include="FrancisStoreServiceModule.cs" />
     <Compile Include="Products\Models\Product.cs" />
     <Compile Include="Products\Models\Collection.cs" />
@@ -62,6 +65,7 @@
     <Compile Include="Products\Services\CollectionService.cs" />
     <Compile Include="Products\Services\ProductService.cs" />
     <Compile Include="Shopping\Interfaces\IShoppingCartService.cs" />
+    <Compile Include="Shopping\Models\Country.cs" />
     <Compile Include="Shopping\Models\Item.cs" />
     <Compile Include="Shopping\Services\ShoppingCartService.cs" />
   </ItemGroup>

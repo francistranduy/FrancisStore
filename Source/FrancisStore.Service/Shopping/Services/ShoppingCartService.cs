@@ -110,6 +110,11 @@ namespace FrancisStore.Service.Shopping.Services
             return await UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id).Select(i => i.Variant.Price * i.Count).SumAsync();
         }
 
+        public async Task<IList<Country>> GetCountries()
+        {
+            return await UnitOfWork.CountryRepository.GetAll().Select(c => new Country {Id = c.Id, Name = c.Name, ShippingFee = c.ShippingFee }).ToListAsync();
+        }
+
         public async Task MigrateShoppingCart(Guid id, Guid userId)
         {
             var items = UnitOfWork.ItemRepository.GetAll().Where(i => i.ShoppingCartId == id);
@@ -120,6 +125,20 @@ namespace FrancisStore.Service.Shopping.Services
             }
             await UnitOfWork.SaveAsync();
             return;
+        }
+
+        public async Task<Country> GetCountry(long id)
+        {
+            var country = await UnitOfWork.CountryRepository.GetById(id);
+            if (country is null)
+                return default;
+
+            return new Country
+            {
+                Id = country.Id,
+                Name = country.Name,
+                ShippingFee = country.ShippingFee
+            };
         }
 
         public string SessionKey

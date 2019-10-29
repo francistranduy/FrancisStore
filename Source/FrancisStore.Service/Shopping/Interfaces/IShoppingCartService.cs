@@ -17,6 +17,8 @@ namespace FrancisStore.Service.Shopping.Interfaces
         Task<IList<Item>> GetItems(Guid id);
         Task<int> GetCount(Guid id);
         Task<double> GetTotalCost(Guid id);
+        Task<IList<Country>> GetCountries();
+        Task<Country> GetCountry(long id);
         Task MigrateShoppingCart(Guid id, Guid userId);
     }
 }
