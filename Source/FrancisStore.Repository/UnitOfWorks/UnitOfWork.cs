@@ -1,4 +1,5 @@
 ﻿using FrancisStore.Data;
+using FrancisStore.Data.Entities.Checkout;
 using FrancisStore.Data.Entities.Products;
 using FrancisStore.Data.Entities.Shopping;
 using FrancisStore.Repository.Bases;
@@ -18,8 +19,11 @@ namespace FrancisStore.Repository.UnitOfWorks
         private readonly IGenericRepository<Collect> _collectRepository;
         private readonly IGenericRepository<Item> _itemRepository;
         private readonly IGenericRepository<Variant> _variantRepository;
+        private readonly IGenericRepository<Country> _countryRepository;
+        private readonly IGenericRepository<Order> _orderRepository;
+        private readonly IGenericRepository<OrderDetail> _orderDetailRepository;
 
-        public UnitOfWork(IFrancisStoreDbContext context, IGenericRepository<Product> productRepository, IGenericRepository<Collection> collectionRepository, IGenericRepository<Collect> collectRepository, IGenericRepository<Item> itemRepository, IGenericRepository<Variant> variantRepository)
+        public UnitOfWork(IFrancisStoreDbContext context, IGenericRepository<Product> productRepository, IGenericRepository<Collection> collectionRepository, IGenericRepository<Collect> collectRepository, IGenericRepository<Item> itemRepository, IGenericRepository<Variant> variantRepository, IGenericRepository<Country> countryRepository, IGenericRepository<Order> orderRepository, IGenericRepository<OrderDetail> orderDetailRepository)
         {
             _context = context;
             _productRepository = productRepository;
@@ -27,6 +31,9 @@ namespace FrancisStore.Repository.UnitOfWorks
             _collectRepository = collectRepository;
             _itemRepository = itemRepository;
             _variantRepository = variantRepository;
+            _countryRepository = countryRepository;
+            _orderRepository = orderRepository;
+            _orderDetailRepository = orderDetailRepository;
         }
 
         protected IFrancisStoreDbContext DbContext
@@ -73,6 +80,30 @@ namespace FrancisStore.Repository.UnitOfWorks
             get
             {
                 return _variantRepository;
+            }
+        }
+
+        public IGenericRepository<Country> CountryRepository
+        {
+            get
+            {
+                return _countryRepository;
+            }
+        }
+
+        public IGenericRepository<Order> OrderRepository
+        {
+            get
+            {
+                return _orderRepository;
+            }
+        }
+
+        public IGenericRepository<OrderDetail> OrderDetailRepository
+        {
+            get
+            {
+                return _orderDetailRepository;
             }
         }
 

@@ -15,6 +15,9 @@ namespace FrancisStore.Repository.UnitOfWorks
         IGenericRepository<FrancisStore.Data.Entities.Products.Collect> CollectRepository { get; }
         IGenericRepository<FrancisStore.Data.Entities.Products.Variant> VariantRepository { get; }
         IGenericRepository<FrancisStore.Data.Entities.Shopping.Item> ItemRepository { get; }
+        IGenericRepository<FrancisStore.Data.Entities.Checkout.Country> CountryRepository { get; }
+        IGenericRepository<FrancisStore.Data.Entities.Checkout.Order> OrderRepository { get; }
+        IGenericRepository<FrancisStore.Data.Entities.Checkout.OrderDetail> OrderDetailRepository { get; }
         void Save();
         Task SaveAsync();
     }
