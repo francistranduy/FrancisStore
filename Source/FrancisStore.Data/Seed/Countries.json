@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "CountryCode": "US",
+    "Name": "United States",
+    "ShippingFee": 10
+  },
+  {
+    "Id": 2,
+    "CountryCode": "JP",
+    "Name": "Japan",
+    "ShippingFee": 20
+  },
+  {
+    "Id": 3,
+    "CountryCode": "UK",
+    "Name": "United Kingdom",
+    "ShippingFee": 15
+  }
+]

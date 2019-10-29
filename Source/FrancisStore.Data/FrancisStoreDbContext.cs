@@ -1,5 +1,6 @@
 namespace FrancisStore.Data
 {
+    using FrancisStore.Data.Entities.Checkout;
     using FrancisStore.Data.Entities.Identity;
     using FrancisStore.Data.Entities.Products;
     using FrancisStore.Data.Entities.Shopping;
@@ -44,5 +45,8 @@ namespace FrancisStore.Data
         public virtual DbSet<Variant> Variants { get; set; }
         public virtual DbSet<Option> Options { get; set; }
         public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

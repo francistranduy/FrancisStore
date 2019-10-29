@@ -1,3 +1,4 @@
+using FrancisStore.Data.Entities.Checkout;
 using FrancisStore.Data.Entities.Products;
 using System;
 using System.Data.Entity;
@@ -75,6 +76,13 @@ namespace FrancisStore.Data.Migrations
                 var collects = Seeder.ReadFile<Collect>(nameof(context.Collects));
                 if (collects != null && collects.Any())
                     context.Collects.AddOrUpdate(collects.ToArray());
+            }
+
+            if (!context.Countries.Any())
+            {
+                var countries = Seeder.ReadFile<Country>(nameof(context.Countries));
+                if (countries != null && countries.Any())
+                    context.Countries.AddOrUpdate(countries.ToArray());
             }
         }
     }

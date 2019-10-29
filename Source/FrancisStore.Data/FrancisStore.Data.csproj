@@ -61,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Bases\BaseEntity.cs" />
+    <Compile Include="Entities\Checkout\Country.cs" />
+    <Compile Include="Entities\Checkout\Order.cs" />
+    <Compile Include="Entities\Checkout\OrderDetail.cs" />
     <Compile Include="Entities\Products\Image.cs" />
     <Compile Include="Entities\Products\ProductImage.cs" />
     <Compile Include="Entities\Shopping\Item.cs" />
@@ -72,6 +75,14 @@
     <Compile Include="Migrations\201910090018223_AddItemEntity.cs" />
     <Compile Include="Migrations\201910090018223_AddItemEntity.Designer.cs">
       <DependentUpon>201910090018223_AddItemEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910271450580_AddCheckoutEntities.cs" />
+    <Compile Include="Migrations\201910271450580_AddCheckoutEntities.Designer.cs">
+      <DependentUpon>201910271450580_AddCheckoutEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910290733408_UpdateOrder.cs" />
+    <Compile Include="Migrations\201910290733408_UpdateOrder.Designer.cs">
+      <DependentUpon>201910290733408_UpdateOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Entities\Products\Collect.cs" />
@@ -88,6 +99,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Seed\Collections.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Seed\Countries.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Seed\Collects.json">
@@ -119,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910090018223_AddItemEntity.resx">
       <DependentUpon>201910090018223_AddItemEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910271450580_AddCheckoutEntities.resx">
+      <DependentUpon>201910271450580_AddCheckoutEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910290733408_UpdateOrder.resx">
+      <DependentUpon>201910290733408_UpdateOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
