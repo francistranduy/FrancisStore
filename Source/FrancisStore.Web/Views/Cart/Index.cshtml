@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_ContentLayout.cshtml";
 }
 
-
-
 @if (Model.Items.Any())
 {
     <!-- Cart item -->
@@ -64,6 +62,8 @@
 
     <!-- Total -->
     <div class="bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm">
+
+
         <h5 class="m-text20 p-b-24">
             Cart Totals
         </h5>
@@ -74,8 +74,9 @@
                 Subtotal:
             </span>
 
+            @Html.HiddenFor(m => m.Subtotal);
             <span class="m-text21 w-size20 w-full-sm">
-                $@Model.Subtatol
+                $@Model.Subtotal
             </span>
         </div>
 
@@ -89,19 +90,22 @@
                 <p class="s-text8 p-b-23">
                     There are no shipping methods available. Please double check your address, or contact us if you need any help.
                 </p>
-
-                <span class="s-text19">Calculate Shipping</span>
-                <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
-                    <select class="selection-2 select2-hidden-accessible" name="country" tabindex="-1" aria-hidden="true">
-                        <option>Select a country...</option>
-                        <option>US</option>
-                        <option>UK</option>
-                        <option>Japan</option>
-                    </select>
-                </div>
+                @using (Html.BeginForm("Index", "Checkout", FormMethod.Get, new { @class = "form-horizontal", id = "form-checkout", role = "form" }))
+                {
+                    <span class="s-text19">Calculate Shipping</span>
+                    <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
+                        <select class="selection-2 select2-hidden-accessible" name="country" tabindex="-1" aria-hidden="true" id="select-country">
+                            <option value="">Select a country...</option>
+                            @foreach (var country in Model.Countries)
+                            {
+                                <option value="@country.Id">@country.Name</option>
+                            }
+                        </select>
+                    </div>
+                }
 
                 <span class="s-text19">Shipping Fee</span>
-                <p class="m-text21 w-size20 w-full-sm">$10.00</p>
+                <p class="m-text21 w-size20 w-full-sm" id="txtShippingFee">$0</p>
             </div>
 
         </div>
@@ -112,14 +116,14 @@
                 Total:
             </span>
 
-            <span class="m-text21 w-size20 w-full-sm">
-                $39.00
+            <span class="m-text21 w-size20 w-full-sm" id="txtTotal">
+                $@Model.Subtotal
             </span>
         </div>
 
         <div class="size15 trans-0-4">
             <!-- Button -->
-            <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+            <button id="btn-checkout" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" onclick="document.getElementById('form-checkout').submit()">
                 Proceed to Checkout
             </button>
         </div>
@@ -166,6 +170,42 @@ else
 
                     if (jqXHR.status == 404) {
                         swal("An error occurred!", "success");
+                    }
+
+                    console.log("An error occurred!");
+                }
+            });
+        });
+
+        $("#select-country").change('click', function () {
+            var id = $("#select-country").val();
+
+            if (!id) {
+                $("#txtTotal").html('$' + (+$("#Subtotal").val()));
+                $("#txtShippingFee").html('$' + 0);
+                return;
+            }
+
+            var data = { Id: id }
+            var url = "Cart/GetCountry";
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                complete: function (jqXHR, textStatus) {
+                    if (jqXHR.status == 200) {
+                        if (jqXHR.responseText && jqXHR.responseText.length > 0) {
+                            var country = JSON.parse(jqXHR.responseText);
+                            $("#txtTotal").html('$' + (country.ShippingFee + (+$("#Subtotal").val())));
+                            $("#txtShippingFee").html('$' + country.ShippingFee);
+                        }
+                        return;
+                    }
+
+                    if (jqXHR.status == 404) {
+                        console.log("Not found!");
+                        return;
                     }
 
                     console.log("An error occurred!");

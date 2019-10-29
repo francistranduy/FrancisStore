@@ -1,0 +1,13 @@
+﻿@model System.Int64
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+}
+
+
+    <h3 class="m-text5 t-center">Thanks for your order! Your order number is: @Model</h3>
+
+@section TitlePage
+    {
+    @{Html.RenderPartial("_TitlePage");}
+}

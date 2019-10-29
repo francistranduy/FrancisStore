@@ -46,6 +46,7 @@ namespace FrancisStore.Web.Controllers
         public async Task<ActionResult> Index()
         {
             var items = await ShoppingCartService.GetItems(this.ShoppingCartId);
+            var countries = await ShoppingCartService.GetCountries();
             return View(new ItemListViewModel
             {
                 Items = items.Select(i => new ItemViewModel
@@ -57,9 +58,26 @@ namespace FrancisStore.Web.Controllers
                     Price = i.Price,
                     Count = i.Count,
                     Total = i.Count * i.Price
-                }), 
-                Subtatol = items.Select(i => i.Price * i.Count).Sum()
+                }),
+                Subtotal = items.Select(i => i.Price * i.Count).Sum(),
+                Countries = countries.Select(c => new CountryViewModel { Id = c.Id, Name = c.Name, ShippingFee = c.ShippingFee })
             });
+        }
+
+        public async Task<ActionResult> GetCountry(long id)
+        {
+            var country = await ShoppingCartService.GetCountry(id);
+
+            if (country is null)
+                return HttpNotFound();
+
+            return Json(new CountryViewModel
+            {
+                Id = country.Id,
+                Name = country.Name,
+                ShippingFee = country.ShippingFee
+            }
+            , JsonRequestBehavior.AllowGet);
         }
 
         public async Task<ActionResult> AddToCart(long variantId, int quantity = 1)
@@ -96,7 +114,7 @@ namespace FrancisStore.Web.Controllers
                     Count = i.Count,
                     Total = i.Count * i.Price
                 }),
-                Subtatol = items.Select(i => i.Price * i.Count).Sum()
+                Subtotal = items.Select(i => i.Price * i.Count).Sum()
             });
         }
     }

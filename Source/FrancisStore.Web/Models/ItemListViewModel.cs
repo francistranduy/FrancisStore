@@ -8,6 +8,7 @@ namespace FrancisStore.Web.Models
     public class ItemListViewModel
     {
         public IEnumerable<ItemViewModel> Items { get; set; }
-        public double Subtatol { get; set; }
+        public double Subtotal { get; set; }
+        public IEnumerable<CountryViewModel> Countries { get; set; }
     }
 }
